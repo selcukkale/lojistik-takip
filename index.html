@@ -8,26 +8,20 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-bottom:80px}
 .hidden{display:none!important}
-/* HEADER */
 .header{background:#1a365d;padding:14px 16px;position:sticky;top:0;z-index:20}
 .header-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .header-logo{display:flex;align-items:center;gap:10px}
-.header-logo-text{color:#fff;font-size:17px;font-weight:700;letter-spacing:.5px}
 .header-logo-sub{color:#90cdf4;font-size:11px;margin-top:1px}
 .switch-btn{background:#2b6cb0;color:#fff;border:none;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
-/* TABS */
 .tabs{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:54px;z-index:10;overflow-x:auto}
 .tabs-inner{max-width:760px;margin:0 auto;display:flex;min-width:320px}
 .tab{flex:1;padding:11px 6px;text-align:center;font-size:12px;cursor:pointer;border-bottom:2px solid transparent;color:#718096;white-space:nowrap}
 .tab.active{color:#1a365d;border-bottom-color:#1a365d;font-weight:700}
-/* WRAP */
-.wrap{max-width:760px;margin:0 auto;padding:14px 14px}
-/* SUMMARY */
+.wrap{max-width:760px;margin:0 auto;padding:14px}
 .summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
 .summary-card{background:#fff;border-radius:10px;padding:10px;text-align:center;border:1px solid #e2e8f0}
 .summary-card .num{font-size:22px;font-weight:700;color:#1a365d}
 .summary-card .lbl{font-size:10px;color:#718096;margin-top:2px}
-/* BUTTONS */
 .btn{border:none;border-radius:8px;padding:10px 16px;font-size:14px;cursor:pointer;font-family:Arial,sans-serif;font-weight:500}
 .btn-primary{background:#1a365d;color:#fff}
 .btn-success{background:#276749;color:#fff}
@@ -36,7 +30,6 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .btn-gray{background:#e2e8f0;color:#4a5568}
 .btn-sm{padding:7px 12px;font-size:12px}
 .btn-block{width:100%;margin-top:8px}
-/* FORM */
 .form-box{background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;border:1px solid #e2e8f0;display:none}
 .form-box.open{display:block}
 .form-title{font-size:15px;font-weight:700;color:#1a365d;margin-bottom:12px}
@@ -45,7 +38,6 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:480px){.form-grid{grid-template-columns:1fr}}
 .form-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-/* LIST */
 .list{display:flex;flex-direction:column;gap:10px}
 .item{background:#fff;border-radius:12px;padding:14px;border:1px solid #e2e8f0}
 .item-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
@@ -70,18 +62,14 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .code-box{background:#1a202c;color:#68d391;border-radius:8px;padding:10px 14px;font-family:monospace;font-size:15px;letter-spacing:3px;text-align:center;margin:10px 0}
 .sofor-ata-row{display:flex;gap:8px;align-items:center;margin-top:10px;background:#f0f4f8;border-radius:8px;padding:10px;flex-wrap:wrap}
 .sofor-ata-row select{flex:1;min-width:120px;padding:8px 10px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;background:#fff;color:#1a202c;outline:none}
-/* LOGIN */
 .login-screen{min-height:100vh;background:#1a365d;display:flex;align-items:center;justify-content:center;padding:20px}
 .login-box{background:#fff;border-radius:20px;padding:32px 24px;width:100%;max-width:380px}
-.login-logo{text-align:center;margin-bottom:24px}
-.login-logo-title{font-size:22px;font-weight:700;color:#1a365d;margin-top:10px}
-.login-logo-sub{font-size:13px;color:#718096;margin-top:4px}
-.login-divider{font-size:12px;color:#a0aec0;text-align:center;margin:12px 0}
+.login-logo{text-align:center;margin-bottom:24px;padding:20px;background:#1a365d;border-radius:12px}
+.login-logo-sub{color:#90cdf4;font-size:13px;margin-top:8px}
 .login-tabs{display:flex;gap:8px;margin-bottom:16px}
 .login-tab{flex:1;padding:10px;border-radius:8px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;font-size:14px;font-weight:600;color:#718096;font-family:Arial,sans-serif}
 .login-tab.active{border-color:#1a365d;color:#1a365d;background:#ebf4ff}
 .login-error{background:#fed7d7;color:#c53030;border-radius:8px;padding:10px 12px;font-size:13px;margin-bottom:12px;display:none}
-/* ŞOFÖR MOBİL */
 .drv-screen{background:#f0f4f8;min-height:100vh}
 .drv-hero{background:#1a365d;padding:20px 16px 24px}
 .drv-hero-name{color:#fff;font-size:20px;font-weight:700}
@@ -94,7 +82,6 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .drv-tab{flex:1;padding:13px;text-align:center;font-size:14px;cursor:pointer;border-bottom:2px solid transparent;color:#718096;font-weight:600}
 .drv-tab.active{color:#1a365d;border-bottom-color:#1a365d}
 .drv-wrap{padding:14px}
-/* SEFER KART */
 .sefer-card{background:#fff;border-radius:14px;border:1px solid #e2e8f0;margin-bottom:14px;overflow:hidden}
 .sefer-card-top{padding:14px 16px;border-bottom:1px solid #f0f4f8}
 .sefer-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#f7fafc;border-bottom:1px solid #f0f4f8}
@@ -105,12 +92,11 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .asamalar{padding:14px 16px}
 .asama-title{font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:10px}
 .asama-steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.asama-btn{padding:9px 13px;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-size:13px;cursor:pointer;font-family:Arial,sans-serif;font-weight:600;transition:all .15s;-webkit-tap-highlight-color:transparent}
+.asama-btn{padding:9px 13px;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-size:13px;cursor:pointer;font-family:Arial,sans-serif;font-weight:600;-webkit-tap-highlight-color:transparent}
 .asama-btn.done{border-color:#276749;background:#c6f6d5;color:#276749}
 .asama-btn.active{border-color:#1a365d;background:#1a365d;color:#fff}
 .asama-btn.next{border-color:#c05621;background:#fff;color:#c05621}
 .asama-btn.disabled{opacity:.35;cursor:not-allowed}
-/* UPLOAD */
 .upload-area{background:#f7fafc;border:2px dashed #cbd5e0;border-radius:12px;padding:14px;margin-top:10px}
 .upload-title{font-size:13px;font-weight:700;color:#4a5568;margin-bottom:10px}
 .upload-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
@@ -120,9 +106,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px}
 .thumb-del{position:absolute;top:-6px;right:-6px;background:#c53030;color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;line-height:20px;text-align:center;padding:0}
 .doc-item{display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:9px 12px;border:1px solid #e2e8f0;margin-top:6px;font-size:13px}
-/* ARŞİV */
 .arsiv-card{background:#fff;border-radius:12px;padding:14px;border:1px solid #e2e8f0;margin-bottom:10px;border-left:4px solid #276749}
-/* RAPOR */
 .rapor-card{background:#fff;border-radius:12px;padding:16px;border:1px solid #e2e8f0;margin-bottom:10px}
 .rapor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
 .rapor-stat{background:#f7fafc;border-radius:8px;padding:8px;text-align:center}
@@ -140,14 +124,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 <div id="loginScreen" class="login-screen">
   <div class="login-box">
     <div class="login-logo">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <rect width="48" height="48" rx="12" fill="#1a365d"/>
-        <path d="M8 32l6-14h4l4 10 4-10h4l6 14H8z" fill="#fff" opacity=".9"/>
-        <rect x="30" y="24" width="10" height="8" rx="2" fill="#90cdf4"/>
-        <circle cx="14" cy="34" r="3" fill="#90cdf4"/>
-        <circle cx="34" cy="34" r="3" fill="#90cdf4"/>
-      </svg>
-      <div class="login-logo-title">Barsel Lojistik</div>
+      <img src="https://api.barseltransport.com/media/barsel-logo-white.png" style="width:180px;display:block;margin:0 auto">
       <div class="login-logo-sub">Sefer Takip Sistemi</div>
     </div>
     <div class="login-tabs">
@@ -177,15 +154,8 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
   <div class="header">
     <div class="header-inner">
       <div class="header-logo">
-        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-          <rect width="48" height="48" rx="10" fill="#2b6cb0"/>
-          <path d="M8 32l6-14h4l4 10 4-10h4l6 14H8z" fill="#fff" opacity=".9"/>
-          <rect x="30" y="24" width="10" height="8" rx="2" fill="#90cdf4"/>
-          <circle cx="14" cy="34" r="3" fill="#90cdf4"/>
-          <circle cx="34" cy="34" r="3" fill="#90cdf4"/>
-        </svg>
+        <img src="https://api.barseltransport.com/media/barsel-logo-white.png" style="height:30px;filter:brightness(0) invert(1)">
         <div>
-          <div class="header-logo-text">Barsel Lojistik</div>
           <div class="header-logo-sub">Yönetici Paneli</div>
         </div>
       </div>
@@ -201,7 +171,6 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
     </div>
   </div>
   <div class="wrap">
-    <!-- SEFERLER -->
     <div id="tab-seferler">
       <div class="summary-grid">
         <div class="summary-card"><div class="num" id="sf-hazir">0</div><div class="lbl">Hazır</div></div>
@@ -230,7 +199,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       </div>
       <div class="list" id="sefer-list"></div>
     </div>
-    <!-- ŞOFÖRLER -->
+
     <div id="tab-soforler" class="hidden">
       <div class="form-box" id="sofor-form">
         <div class="form-title">👤 Yeni Şoför & Araç</div>
@@ -255,14 +224,14 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       </div>
       <div class="list" id="sofor-list"></div>
     </div>
-    <!-- TESLİMLER -->
+
     <div id="tab-teslimler" class="hidden">
       <div style="margin-bottom:12px">
         <input class="form-input" id="search-kod" placeholder="🔍 Sefer kodu ile ara... SF-2025-001" oninput="renderTeslimler()" style="max-width:340px">
       </div>
       <div class="list" id="teslim-list"></div>
     </div>
-    <!-- RAPOR -->
+
     <div id="tab-rapor" class="hidden">
       <div class="summary-grid">
         <div class="summary-card"><div class="num" id="r-toplam">0</div><div class="lbl">Toplam</div></div>
@@ -281,16 +250,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
   <div class="header">
     <div class="header-inner">
       <div class="header-logo">
-        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-          <rect width="48" height="48" rx="10" fill="#2b6cb0"/>
-          <path d="M8 32l6-14h4l4 10 4-10h4l6 14H8z" fill="#fff" opacity=".9"/>
-          <rect x="30" y="24" width="10" height="8" rx="2" fill="#90cdf4"/>
-          <circle cx="14" cy="34" r="3" fill="#90cdf4"/>
-          <circle cx="34" cy="34" r="3" fill="#90cdf4"/>
-        </svg>
-        <div>
-          <div class="header-logo-text" style="font-size:15px">Barsel Lojistik</div>
-        </div>
+        <img src="https://api.barseltransport.com/media/barsel-logo-white.png" style="height:26px;filter:brightness(0) invert(1)">
       </div>
       <button class="switch-btn" onclick="logout()" style="background:#c53030">Çıkış</button>
     </div>
@@ -368,7 +328,6 @@ function badgeCls(d){
   return m[d]||"badge-gray";
 }
 
-/* LOGIN */
 function setLoginTab(tab){
   loginTab=tab;
   document.getElementById("ltab-admin").classList.toggle("active",tab==="admin");
@@ -414,7 +373,6 @@ function logout(){
   document.getElementById("login-error").style.display="none";
 }
 
-/* DRIVER TABS */
 function showDriverTab(tab){
   document.getElementById("drv-aktif").classList.toggle("hidden",tab!=="aktif");
   document.getElementById("drv-arsiv").classList.toggle("hidden",tab!=="arsiv");
@@ -424,7 +382,6 @@ function showDriverTab(tab){
   else renderDriverArsiv();
 }
 
-/* ADMIN TABS */
 function showTab(tab){
   activeTab=tab;
   var tabs=["seferler","soforler","teslimler","rapor"];
@@ -440,7 +397,6 @@ function adminFab(){
   if(f[activeTab])toggleForm(f[activeTab]);
 }
 
-/* ŞOFÖR ATA */
 function soforAta(seferId){
   var sel=document.getElementById("sofor-select-"+seferId);
   if(!sel)return;
@@ -448,7 +404,6 @@ function soforAta(seferId){
   if(s){s.sofor=sel.value;saveDB();renderSeferler();}
 }
 
-/* SEFER */
 function addSefer(){
   var firma=document.getElementById("ff-firma").value.trim();
   var alim=document.getElementById("ff-alim").value.trim();
@@ -521,7 +476,6 @@ function renderSeferler(){
   }).join(""):'<div class="empty">Aktif sefer yok<br><small>Aşağıdaki + butonuna bas</small></div>';
 }
 
-/* ŞOFÖR */
 function addSofor(){
   var ad=document.getElementById("af-ad").value.trim();
   var plaka=document.getElementById("af-plaka").value.trim();
@@ -550,14 +504,13 @@ function renderSoforler(){
     '<div class="item-header">'+
     '<div><div class="item-title">'+a.ad+'</div>'+
     '<div class="item-sub">'+a.plaka+' · '+a.tip+(a.tel?' · '+a.tel:'')+'<br>Kullanıcı: <b>'+a.kadi+'</b> · '+aktif+' aktif / '+toplam+' toplam sefer</div></div>'+
-    '<span class="badge '+badgeCls(a.durum)+'">'+a.durum+'</span></div>'+
+    '<span class="badge badge-green">'+a.durum+'</span></div>'+
     '<div class="item-detail'+(open?" open":"")+'" onclick="event.stopPropagation()">'+
     '<div class="detail-actions"><button class="btn btn-danger btn-sm" onclick="delSofor('+a.id+')">Sil</button></div>'+
     '</div></div>';
   }).join(""):'<div class="empty">Henüz şoför eklenmedi</div>';
 }
 
-/* TESLİMLER */
 function renderTeslimler(){
   var ara=(document.getElementById("search-kod").value||"").trim().toUpperCase();
   var liste=DB.seferler.filter(function(s){return s.durum==="teslim edildi"&&(!ara||s.kod.toUpperCase().includes(ara));});
@@ -582,7 +535,6 @@ function renderTeslimler(){
   }).join(""):'<div class="empty">'+(ara?"Eşleşen sefer bulunamadı":"Henüz teslim yok")+'</div>';
 }
 
-/* RAPOR */
 function renderRapor(){
   var toplam=DB.seferler.length;
   var teslim=DB.seferler.filter(function(s){return s.durum==="teslim edildi";}).length;
@@ -606,7 +558,6 @@ function renderRapor(){
   }).join(""):'<div class="empty">Henüz şoför eklenmedi</div>';
 }
 
-/* ŞOFÖR MOBİL */
 function renderDriverAktif(){
   if(!currentDriver)return;
   var gorevler=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum!=="teslim edildi";});
@@ -651,6 +602,7 @@ function buildSeferCard(s){
   '<div class="asamalar">'+
   '<div class="asama-title">SEFER AŞAMALARI</div>'+
   '<div class="asama-steps">';
+
   ASAMALAR.forEach(function(a,i){
     var cls="asama-btn";
     if(i<ai)cls+=" done";
@@ -662,12 +614,14 @@ function buildSeferCard(s){
   });
   html+='</div>';
 
-  if(ai>=0){
+  // Sadece Yükleme aşamasında (ai===0) fotoğraf alanı
+  if(ai===0){
     html+='<div class="upload-area">'+
     '<div class="upload-title">📷 Yükleme Fotoğrafları</div>'+
     '<div class="upload-btns">'+
     '<label class="upload-btn">📷 Kamera<input type="file" accept="image/*" capture="environment" style="display:none" onchange="uploadFoto(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
     '<label class="upload-btn">🖼 Albüm<input type="file" accept="image/*" multiple style="display:none" onchange="uploadFotoMulti(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
+    '<label class="upload-btn">📄 Dosya<input type="file" accept="application/pdf,image/*" style="display:none" onchange="uploadEvrakAlan(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
     '</div><div class="thumb-row">';
     (s.yuklemeFotolar||[]).forEach(function(f,fi){
       html+='<div class="thumb"><img src="'+f+'"><button class="thumb-del" onclick="delFoto('+s.id+',\'yuklemeFotolar\','+fi+')">✕</button></div>';
@@ -675,6 +629,7 @@ function buildSeferCard(s){
     html+='</div></div>';
   }
 
+  // Sadece Teslim Edildi aşamasında (ai===4) evrak ve fotoğraf alanı
   if(ai===ASAMALAR.length-1){
     html+='<div class="upload-area" style="margin-top:10px">'+
     '<div class="upload-title">✅ Teslim Belgesi ve Fotoğraf</div>'+
@@ -692,6 +647,7 @@ function buildSeferCard(s){
     });
     html+='<div class="code-box">'+s.kod+'</div></div>';
   }
+
   html+='</div></div>';
   return html;
 }
@@ -720,6 +676,18 @@ function uploadEvrak(e,id){
   var s=DB.seferler.find(function(x){return x.id===id;});
   if(!s)return;if(!s.teslimEvraklar)s.teslimEvraklar=[];
   s.teslimEvraklar.push({ad:f.name});saveDB();renderDriverAktif();
+}
+
+function uploadEvrakAlan(e,id,alan){
+  var f=e.target.files[0];if(!f)return;
+  var s=DB.seferler.find(function(x){return x.id===id;});
+  if(!s)return;if(!s[alan])s[alan]=[];
+  if(f.type.startsWith("image/")){
+    resizeImg(f,function(d){s[alan].push(d);saveDB();renderDriverAktif();});
+  }else{
+    if(!s.teslimEvraklar)s.teslimEvraklar=[];
+    s.teslimEvraklar.push({ad:f.name});saveDB();renderDriverAktif();
+  }
 }
 
 function delFoto(id,alan,idx){
