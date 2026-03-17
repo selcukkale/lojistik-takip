@@ -13,20 +13,19 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .switch-btn{background:#2b6cb0;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;cursor:pointer}
 .tabs{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:56px;z-index:10}
 .tabs-inner{max-width:760px;margin:0 auto;display:flex}
-.tab{flex:1;padding:12px;text-align:center;font-size:13px;cursor:pointer;border-bottom:2px solid transparent;color:#718096}
+.tab{flex:1;padding:12px;text-align:center;font-size:12px;cursor:pointer;border-bottom:2px solid transparent;color:#718096}
 .tab.active{color:#1a365d;border-bottom-color:#1a365d;font-weight:600}
 .wrap{max-width:760px;margin:0 auto;padding:16px}
-.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
-.summary-card{background:#fff;border-radius:12px;padding:14px;text-align:center;border:1px solid #e2e8f0}
-.summary-card .num{font-size:26px;font-weight:700;color:#1a365d}
-.summary-card .lbl{font-size:11px;color:#718096;margin-top:4px}
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.summary-card{background:#fff;border-radius:12px;padding:12px;text-align:center;border:1px solid #e2e8f0}
+.summary-card .num{font-size:24px;font-weight:700;color:#1a365d}
+.summary-card .lbl{font-size:11px;color:#718096;margin-top:3px}
 .btn{border:none;border-radius:8px;padding:10px 16px;font-size:14px;cursor:pointer;font-family:Arial,sans-serif}
 .btn-primary{background:#1a365d;color:#fff}
 .btn-success{background:#276749;color:#fff}
 .btn-warning{background:#c05621;color:#fff}
 .btn-danger{background:#c53030;color:#fff}
 .btn-gray{background:#e2e8f0;color:#4a5568}
-.btn-orange{background:#dd6b20;color:#fff}
 .btn-purple{background:#553c9a;color:#fff}
 .btn-sm{padding:6px 12px;font-size:12px}
 .form-box{background:#fff;border-radius:12px;padding:20px;margin-bottom:14px;border:1px solid #e2e8f0;display:none}
@@ -35,9 +34,9 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .form-label{font-size:11px;color:#718096;letter-spacing:1px;margin-bottom:4px;display:block;margin-top:10px}
 .form-input{width:100%;padding:9px 11px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;background:#f7fafc;color:#1a202c;outline:none}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-actions{display:flex;gap:8px;margin-top:14px}
+.form-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .list{display:flex;flex-direction:column;gap:10px}
-.item{background:#fff;border-radius:12px;padding:16px;border:1px solid #e2e8f0;cursor:pointer}
+.item{background:#fff;border-radius:12px;padding:16px;border:1px solid #e2e8f0}
 .item-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .item-title{font-size:15px;font-weight:600;color:#1a202c}
 .item-sub{font-size:12px;color:#718096;margin-top:3px}
@@ -47,8 +46,8 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .badge-green{background:#c6f6d5;color:#276749}
 .badge-red{background:#fed7d7;color:#c53030}
 .badge-gray{background:#e2e8f0;color:#4a5568}
-.badge-orange{background:#feebc8;color:#744210}
 .badge-purple{background:#e9d8fd;color:#553c9a}
+.badge-orange{background:#feebc8;color:#c05621}
 .item-detail{margin-top:12px;padding-top:12px;border-top:1px solid #f0f4f8;display:none}
 .item-detail.open{display:block}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
@@ -57,47 +56,6 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .detail-value{font-size:13px;color:#1a202c;font-weight:500}
 .detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .code-box{background:#1a202c;color:#68d391;border-radius:8px;padding:10px 14px;font-family:monospace;font-size:14px;letter-spacing:2px;text-align:center;margin:10px 0}
-/* STEPPER */
-.stepper{display:flex;align-items:center;margin:12px 0;overflow-x:auto;padding-bottom:4px}
-.step{display:flex;flex-direction:column;align-items:center;min-width:70px}
-.step-circle{width:32px;height:32px;border-radius:50%;border:2px solid #e2e8f0;background:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#a0aec0}
-.step-circle.done{background:#276749;border-color:#276749;color:#fff}
-.step-circle.active{background:#1a365d;border-color:#1a365d;color:#fff}
-.step-label{font-size:10px;color:#a0aec0;margin-top:4px;text-align:center}
-.step-label.active{color:#1a365d;font-weight:600}
-.step-label.done{color:#276749}
-.step-line{flex:1;height:2px;background:#e2e8f0;min-width:16px}
-.step-line.done{background:#276749}
-/* UPLOAD */
-.upload-area{border:2px dashed #e2e8f0;border-radius:10px;padding:16px;text-align:center;cursor:pointer;margin:8px 0;background:#f7fafc}
-.upload-area:hover{border-color:#1a365d;background:#ebf4ff}
-.upload-area p{font-size:13px;color:#718096;margin-top:6px}
-.photo-grid{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
-.photo-thumb{position:relative;width:80px;height:80px}
-.photo-thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px}
-.photo-thumb .rm-btn{position:absolute;top:-6px;right:-6px;background:#c53030;color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;line-height:20px;text-align:center;padding:0}
-.doc-item{display:flex;align-items:center;gap:8px;background:#f7fafc;border-radius:8px;padding:8px 10px;margin:4px 0}
-.doc-item span{font-size:13px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-/* DRIVER */
-.driver-header{background:#276749;padding:16px;border-radius:12px;margin-bottom:14px;color:#fff}
-.task-card{background:#fff;border-radius:12px;border:1px solid #e2e8f0;margin-bottom:12px;overflow:hidden}
-.task-card-header{padding:16px;border-bottom:1px solid #f0f4f8}
-.task-card-body{padding:16px}
-.task-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
-.task-info{background:#f7fafc;border-radius:8px;padding:8px 10px}
-.task-info-label{font-size:10px;color:#a0aec0;letter-spacing:1px;margin-bottom:2px}
-.task-info-value{font-size:13px;font-weight:500;color:#1a202c}
-.asamalar{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.asama-btn{width:100%;padding:14px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;text-align:left;font-family:Arial,sans-serif;display:flex;align-items:center;gap:10px}
-.asama-btn.aktif{border-color:#1a365d;background:#ebf4ff}
-.asama-btn.tamamlandi{border-color:#276749;background:#f0fff4;opacity:.7}
-.asama-btn.disabled{opacity:.4;cursor:not-allowed}
-.asama-icon{font-size:20px;min-width:28px}
-.asama-text{flex:1}
-.asama-title{font-size:14px;font-weight:600;color:#1a202c}
-.asama-sub{font-size:12px;color:#718096;margin-top:2px}
-.asama-detay{background:#f7fafc;border-radius:10px;padding:14px;margin-top:8px;display:none}
-.asama-detay.open{display:block}
 .login-wrap{max-width:400px;margin:60px auto;padding:16px}
 .login-box{background:#fff;border-radius:16px;padding:28px;border:1px solid #e2e8f0}
 .login-title{font-size:22px;font-weight:700;color:#1a365d;margin-bottom:6px}
@@ -113,7 +71,33 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .rapor-stat{background:#f7fafc;border-radius:8px;padding:8px;text-align:center}
 .rapor-stat .rnum{font-size:20px;font-weight:700;color:#1a365d}
 .rapor-stat .rlbl{font-size:11px;color:#718096;margin-top:2px}
-.empty{text-align:center;padding:50px 20px;color:#a0aec0;font-size:14px}
+.empty{text-align:center;padding:40px 20px;color:#a0aec0;font-size:14px}
+/* ŞOFÖR EKRANI */
+.driver-header{background:#1a365d;padding:16px;border-radius:12px;margin-bottom:16px;color:#fff}
+.sefer-card{background:#fff;border-radius:12px;border:1px solid #e2e8f0;margin-bottom:14px;overflow:hidden}
+.sefer-card-header{padding:16px;border-bottom:1px solid #f0f4f8}
+.sefer-info{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px;background:#f7fafc}
+.sefer-info-item{font-size:13px}
+.sefer-info-label{font-size:10px;color:#a0aec0;letter-spacing:1px;margin-bottom:2px}
+.sefer-info-value{color:#1a202c;font-weight:500}
+.asamalar{padding:14px}
+.asamalar-title{font-size:12px;color:#718096;letter-spacing:1px;margin-bottom:10px}
+.asama-steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.asama-btn{padding:8px 12px;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-size:13px;cursor:pointer;font-family:Arial,sans-serif;transition:all .15s}
+.asama-btn.active{border-color:#1a365d;background:#1a365d;color:#fff}
+.asama-btn.done{border-color:#276749;background:#c6f6d5;color:#276749}
+.asama-btn.disabled{opacity:.4;cursor:not-allowed}
+.upload-area{background:#f7fafc;border:2px dashed #cbd5e0;border-radius:10px;padding:16px;margin-top:10px}
+.upload-title{font-size:13px;font-weight:600;color:#4a5568;margin-bottom:10px}
+.upload-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.upload-btn{padding:10px 14px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;font-size:13px;cursor:pointer;font-family:Arial,sans-serif;display:flex;align-items:center;gap:6px}
+.upload-btn:hover{border-color:#1a365d}
+.thumb-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.thumb{position:relative;width:72px;height:72px}
+.thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.thumb-del{position:absolute;top:-6px;right:-6px;background:#c53030;color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;cursor:pointer;line-height:18px;text-align:center}
+.doc-item{display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #e2e8f0;margin-top:6px;font-size:13px}
+.arsiv-card{background:#fff;border-radius:12px;padding:14px;border:1px solid #e2e8f0;margin-bottom:10px;border-left:4px solid #276749}
 </style>
 </head>
 <body>
@@ -127,7 +111,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       <div class="login-sub">Rolünüzü seçerek giriş yapın</div>
       <button class="role-btn" onclick="login('admin')">
         <div class="role-title">👔 Yönetici Paneli</div>
-        <div class="role-sub">Seferler, şoförler, teslimler ve raporlar</div>
+        <div class="role-sub">Seferler, şoförler ve raporlar</div>
       </button>
       <div style="font-size:12px;color:#a0aec0;margin:8px 0;text-align:center">— Şoför Girişi —</div>
       <div id="driverBtns"></div>
@@ -152,6 +136,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
     </div>
   </div>
   <div class="wrap">
+    <!-- AKTİF SEFERLER -->
     <div id="tab-seferler">
       <div class="summary-grid">
         <div class="summary-card"><div class="num" id="sf-hazir">0</div><div class="lbl">Hazırlanıyor</div></div>
@@ -180,19 +165,17 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       </div>
       <div class="list" id="sefer-list"></div>
     </div>
-
+    <!-- ŞOFÖR & ARAÇ -->
     <div id="tab-soforler" class="hidden">
       <div class="form-box" id="sofor-form">
         <div class="form-title">👤 Yeni Şoför & Araç</div>
         <div class="form-grid">
-          <div><label class="form-label">ŞOFÖR ADI SOYADI</label><input class="form-input" id="af-ad" placeholder="Ad Soyad"></div>
+          <div><label class="form-label">AD SOYAD</label><input class="form-input" id="af-ad" placeholder="Ad Soyad"></div>
           <div><label class="form-label">PLAKA</label><input class="form-input" id="af-plaka" placeholder="35 ABC 123"></div>
         </div>
         <div class="form-grid">
           <div><label class="form-label">ARAÇ TİPİ</label>
-            <select class="form-input" id="af-tip">
-              <option>TIR</option><option>Kamyon</option><option>Kamyonet</option><option>Frigorifik TIR</option><option>Tanker</option>
-            </select>
+            <select class="form-input" id="af-tip"><option>TIR</option><option>Kamyon</option><option>Kamyonet</option><option>Frigorifik TIR</option><option>Tanker</option></select>
           </div>
           <div><label class="form-label">TELEFON</label><input class="form-input" id="af-tel" placeholder="05XX XXX XX XX"></div>
         </div>
@@ -203,14 +186,14 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       </div>
       <div class="list" id="sofor-list"></div>
     </div>
-
+    <!-- TESLİMLER -->
     <div id="tab-teslimler" class="hidden">
       <div style="margin-bottom:12px">
         <input class="form-input" id="search-kod" placeholder="🔍 Teslimat kodu ile ara..." oninput="renderTeslimler()" style="max-width:320px">
       </div>
       <div class="list" id="teslim-list"></div>
     </div>
-
+    <!-- RAPOR -->
     <div id="tab-rapor" class="hidden">
       <div class="summary-grid">
         <div class="summary-card"><div class="num" id="r-toplam">0</div><div class="lbl">Toplam Sefer</div></div>
@@ -228,16 +211,28 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 <div id="driverScreen" class="hidden">
   <div class="header">
     <div class="header-inner">
-      <div style="color:#fff;font-size:18px;font-weight:700">🚛 Seferlerim</div>
-      <button class="switch-btn" onclick="logout()">Çıkış</button>
+      <div>
+        <div style="color:#fff;font-size:17px;font-weight:700" id="drv-name"></div>
+        <div style="color:#90cdf4;font-size:12px;margin-top:2px" id="drv-plaka"></div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="switch-btn" onclick="showDriverTab('aktif')" id="drv-tab-aktif" style="background:#2b6cb0">Aktif</button>
+        <button class="switch-btn" onclick="showDriverTab('arsiv')" id="drv-tab-arsiv" style="background:transparent;border:1px solid #4a5568">Arşiv</button>
+        <button class="switch-btn" onclick="logout()" style="background:#c53030">Çıkış</button>
+      </div>
     </div>
   </div>
   <div class="wrap">
-    <div class="driver-header">
-      <div style="font-size:18px;font-weight:700" id="driver-name-display"></div>
-      <div style="font-size:13px;opacity:.8;margin-top:4px" id="driver-task-count"></div>
+    <div id="drv-aktif">
+      <div class="driver-header">
+        <div style="font-size:13px;opacity:.8" id="drv-task-count"></div>
+      </div>
+      <div id="driver-tasks"></div>
     </div>
-    <div id="driver-tasks"></div>
+    <div id="drv-arsiv" class="hidden">
+      <div style="font-size:14px;color:#718096;margin-bottom:12px">Teslim ettiğiniz seferler</div>
+      <div id="driver-arsiv-list"></div>
+    </div>
   </div>
 </div>
 
@@ -248,20 +243,14 @@ var DB={
   seferler:JSON.parse(localStorage.getItem("loj_seferler")||"[]"),
   soforler:JSON.parse(localStorage.getItem("loj_soforler")||"[]")
 };
-var currentRole=null,currentDriver=null,activeTab="seferler",openItems={};
-var ASAMALAR=[
-  {key:"yukleme",icon:"📦",title:"Yükleme",sub:"Yükleme yapılıyor"},
-  {key:"yola_ciktim",icon:"🚛",title:"Yola Çıktım",sub:"Araç hareket etti"},
-  {key:"bekleme",icon:"⏳",title:"Bekleme",sub:"Bekleme noktasında"},
-  {key:"indirme",icon:"🏭",title:"İndirme",sub:"Mal indiriliyor"},
-  {key:"teslim",icon:"✅",title:"Teslim Edildi",sub:"Teslimat tamamlandı"}
-];
+var currentRole=null,currentDriver=null,activeTab="seferler",openItems={},driverTab="aktif";
+var ASAMALAR=["Yükleme","Yola Çıktım","Bekleme","İndirme","Teslim Edildi"];
 
 function saveDB(){
   try{
     localStorage.setItem("loj_seferler",JSON.stringify(DB.seferler));
     localStorage.setItem("loj_soforler",JSON.stringify(DB.soforler));
-  }catch(e){alert("Depolama doldu! Bazı fotoğrafları silin.");}
+  }catch(e){alert("Depolama doldu! Bazı fotoğrafları silmeyi deneyin.");}
   var el=document.getElementById("saved");el.style.opacity="1";
   setTimeout(function(){el.style.opacity="0";},1500);
 }
@@ -272,39 +261,32 @@ function genKod(){
   return k;
 }
 
-function show(id){document.getElementById(id).classList.remove("hidden");}
-function hide(id){document.getElementById(id).classList.add("hidden");}
-function toggleForm(id){document.getElementById(id).classList.toggle("open");}
-function toggleItem(key){openItems[key]=!openItems[key];renderAll();}
-
-function badgeCls(d){
-  return{hazırlanıyor:"badge-yellow",yukleme:"badge-orange",yola_ciktim:"badge-blue",bekleme:"badge-purple",indirme:"badge-orange",teslim:"badge-green",müsait:"badge-green",bakımda:"badge-red"}[d]||"badge-gray";
-}
-function badgeLabel(d){
-  return{hazırlanıyor:"Hazırlanıyor",yukleme:"Yükleme",yola_ciktim:"Yolda",bekleme:"Bekleme",indirme:"İndirme",teslim:"Teslim",müsait:"Müsait",bakımda:"Bakımda"}[d]||d;
-}
-
 function resizeImg(file,cb){
   var r=new FileReader();
   r.onload=function(e){
     var img=new Image();
     img.onload=function(){
-      var c=document.getElementById("canvas"),max=800,w=img.width,h=img.height;
+      var canvas=document.getElementById("canvas");
+      var max=800,w=img.width,h=img.height;
       if(w>max){h=h*(max/w);w=max;}
       if(h>max){w=w*(max/h);h=max;}
-      c.width=w;c.height=h;
-      c.getContext("2d").drawImage(img,0,0,w,h);
-      cb(c.toDataURL("image/jpeg",0.65));
+      canvas.width=w;canvas.height=h;
+      canvas.getContext("2d").drawImage(img,0,0,w,h);
+      cb(canvas.toDataURL("image/jpeg",0.7));
     };
     img.src=e.target.result;
   };
   r.readAsDataURL(file);
 }
 
-function readFile(file,cb){
-  var r=new FileReader();
-  r.onload=function(e){cb(e.target.result,file.name,file.type);};
-  r.readAsDataURL(file);
+function show(id){document.getElementById(id).classList.remove("hidden");}
+function hide(id){document.getElementById(id).classList.add("hidden");}
+function toggleForm(id){document.getElementById(id).classList.toggle("open");}
+function toggleItem(key){openItems[key]=!openItems[key];renderAll();}
+
+function badgeCls(d){
+  var map={hazırlanıyor:"badge-yellow",yükleme:"badge-orange","yola çıktım":"badge-blue",bekleme:"badge-purple",indirme:"badge-orange","teslim edildi":"badge-green",müsait:"badge-green",bakımda:"badge-red"};
+  return map[d]||"badge-gray";
 }
 
 function login(role,driverId){
@@ -312,7 +294,10 @@ function login(role,driverId){
   if(role==="admin"){show("adminScreen");renderAll();}
   else{
     currentDriver=DB.soforler.find(function(a){return a.id===driverId;});
-    show("driverScreen");renderDriver();
+    show("driverScreen");
+    document.getElementById("drv-name").textContent=currentDriver.ad;
+    document.getElementById("drv-plaka").textContent=currentDriver.plaka+" · "+currentDriver.tip;
+    showDriverTab("aktif");
   }
 }
 
@@ -321,14 +306,24 @@ function logout(){
   currentRole=null;currentDriver=null;renderDriverBtns();
 }
 
+function showDriverTab(tab){
+  driverTab=tab;
+  document.getElementById("drv-aktif").classList.toggle("hidden",tab!=="aktif");
+  document.getElementById("drv-arsiv").classList.toggle("hidden",tab!=="arsiv");
+  document.getElementById("drv-tab-aktif").style.background=tab==="aktif"?"#2b6cb0":"transparent";
+  document.getElementById("drv-tab-arsiv").style.background=tab==="arsiv"?"#2b6cb0":"transparent";
+  if(tab==="aktif")renderDriverAktif();
+  else renderDriverArsiv();
+}
+
 function showTab(tab){
   activeTab=tab;
   var tabs=["seferler","soforler","teslimler","rapor"];
   document.querySelectorAll(".tab").forEach(function(t,i){t.classList.toggle("active",tabs[i]===tab);});
   tabs.forEach(function(t){document.getElementById("tab-"+t).classList.toggle("hidden",t!==tab);});
-  document.getElementById("admin-fab").style.display=(tab==="rapor"||tab==="teslimler")?"none":"block";
   if(tab==="rapor")renderRapor();
   if(tab==="teslimler")renderTeslimler();
+  document.getElementById("admin-fab").style.display=(tab==="rapor"||tab==="teslimler")?"none":"block";
 }
 
 function adminFab(){
@@ -348,27 +343,26 @@ function addSefer(){
   DB.seferler.push({
     id:Date.now(),kod:genKod(),firma:firma,sofor:sofor,
     alim:alim,teslimat:teslimat,urun:urun,tonaj:tonaj||"-",
-    durum:"hazırlanıyor",tarih:new Date().toLocaleDateString("tr-TR"),
-    teslimTarih:null,
-    asamalar:{},
-    yuklemeFotolar:[],
-    teslimFotolar:[],
-    teslimEvraklar:[]
+    durum:"hazırlanıyor",asama:-1,
+    tarih:new Date().toLocaleDateString("tr-TR"),teslimTarih:null,
+    yuklemeFotolar:[],teslimFotolar:[],teslimEvraklar:[]
   });
   ["ff-firma","ff-alim","ff-teslimat","ff-urun","ff-tonaj"].forEach(function(id){document.getElementById(id).value="";});
   document.getElementById("ff-sofor").value="";
   toggleForm("sefer-form");saveDB();renderSeferler();
 }
 
-function setSeferDurum(id,durum){
-  var s=DB.seferler.find(function(x){return x.id===id;});
-  if(s){
-    s.durum=durum;
-    s.asamalar=s.asamalar||{};
-    s.asamalar[durum]=new Date().toLocaleTimeString("tr-TR",{hour:"2-digit",minute:"2-digit"});
-    if(durum==="teslim")s.teslimTarih=new Date().toLocaleDateString("tr-TR");
-    saveDB();renderAll();if(currentDriver)renderDriver();
+function setSeferAsama(seferId,asamaIdx){
+  var s=DB.seferler.find(function(x){return x.id===seferId;});
+  if(!s)return;
+  s.asama=asamaIdx;
+  s.durum=ASAMALAR[asamaIdx].toLowerCase();
+  if(asamaIdx===ASAMALAR.length-1){
+    s.teslimTarih=new Date().toLocaleDateString("tr-TR");
   }
+  saveDB();
+  if(currentDriver)renderDriverAktif();
+  renderSeferler();
 }
 
 function delSefer(id){
@@ -378,20 +372,20 @@ function delSefer(id){
 }
 
 function renderSeferler(){
-  var aktif=DB.seferler.filter(function(s){return s.durum!=="teslim";});
+  var aktif=DB.seferler.filter(function(s){return s.durum!=="teslim edildi";});
   document.getElementById("sf-hazir").textContent=aktif.filter(function(s){return s.durum==="hazırlanıyor";}).length;
-  document.getElementById("sf-yolda").textContent=aktif.filter(function(s){return s.durum==="yola_ciktim";}).length;
-  document.getElementById("sf-teslim").textContent=DB.seferler.filter(function(s){return s.durum==="teslim";}).length;
+  document.getElementById("sf-yolda").textContent=aktif.filter(function(s){return s.durum==="yola çıktım";}).length;
+  document.getElementById("sf-teslim").textContent=DB.seferler.filter(function(s){return s.durum==="teslim edildi";}).length;
   document.getElementById("sf-toplam").textContent=DB.seferler.length;
   var sel=document.getElementById("ff-sofor");
   sel.innerHTML='<option value="">Şoför seç...</option>'+DB.soforler.map(function(a){return'<option value="'+a.id+'">'+a.ad+' ('+a.plaka+')</option>';}).join("");
   document.getElementById("sefer-list").innerHTML=aktif.length?aktif.map(function(s){
     var sofor=DB.soforler.find(function(a){return a.id==s.sofor;});
     var open=openItems["s"+s.id];
-    return'<div class="item" onclick="toggleItem(\'s'+s.id+'\')">'+
-    '<div class="item-header"><div><div class="item-title">'+s.firma+'</div>'+
-    '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · '+s.tarih+(sofor?' · '+sofor.ad:'')+'</div></div>'+
-    '<span class="badge '+badgeCls(s.durum)+'">'+badgeLabel(s.durum)+'</span></div>'+
+    return'<div class="item" style="cursor:pointer" onclick="toggleItem(\'s'+s.id+'\')">'+
+    '<div class="item-header">'+
+    '<div><div class="item-title">'+s.firma+'</div><div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · '+s.tarih+'</div></div>'+
+    '<span class="badge '+badgeCls(s.durum)+'">'+s.durum+'</span></div>'+
     '<div class="item-detail'+(open?" open":"")+'" onclick="event.stopPropagation()">'+
     '<div class="detail-grid">'+
     '<div class="detail-item"><div class="detail-label">ALIM</div><div class="detail-value">'+s.alim+'</div></div>'+
@@ -418,11 +412,6 @@ function addSofor(){
   toggleForm("sofor-form");saveDB();renderSoforler();renderDriverBtns();
 }
 
-function setSoforDurum(id,durum){
-  var a=DB.soforler.find(function(x){return x.id===id;});
-  if(a){a.durum=durum;saveDB();renderSoforler();}
-}
-
 function delSofor(id){
   if(!confirm("Bu şoför silinsin mi?"))return;
   DB.soforler=DB.soforler.filter(function(x){return x.id!==id;});
@@ -432,17 +421,14 @@ function delSofor(id){
 function renderSoforler(){
   document.getElementById("sofor-list").innerHTML=DB.soforler.length?DB.soforler.map(function(a){
     var open=openItems["a"+a.id];
-    var aktif=DB.seferler.filter(function(s){return s.sofor==a.id&&s.durum!=="teslim";}).length;
+    var aktif=DB.seferler.filter(function(s){return s.sofor==a.id&&s.durum!=="teslim edildi";}).length;
     var toplam=DB.seferler.filter(function(s){return s.sofor==a.id;}).length;
-    return'<div class="item" onclick="toggleItem(\'a'+a.id+'\')">'+
-    '<div class="item-header"><div><div class="item-title">'+a.ad+'</div>'+
-    '<div class="item-sub">'+a.plaka+' · '+a.tip+(a.tel?' · '+a.tel:'')+' · '+aktif+' aktif / '+toplam+' toplam</div></div>'+
-    '<span class="badge '+badgeCls(a.durum)+'">'+badgeLabel(a.durum)+'</span></div>'+
+    return'<div class="item" style="cursor:pointer" onclick="toggleItem(\'a'+a.id+'\')">'+
+    '<div class="item-header">'+
+    '<div><div class="item-title">'+a.ad+'</div><div class="item-sub">'+a.plaka+' · '+a.tip+(a.tel?' · '+a.tel:'')+' · '+aktif+' aktif / '+toplam+' toplam</div></div>'+
+    '<span class="badge '+badgeCls(a.durum)+'">'+a.durum+'</span></div>'+
     '<div class="item-detail'+(open?" open":"")+'" onclick="event.stopPropagation()">'+
     '<div class="detail-actions">'+
-    '<button class="btn btn-success btn-sm" onclick="setSoforDurum('+a.id+',\'müsait\')">Müsait</button>'+
-    '<button class="btn btn-warning btn-sm" onclick="setSoforDurum('+a.id+',\'yolda\')">Yolda</button>'+
-    '<button class="btn btn-danger btn-sm" onclick="setSoforDurum('+a.id+',\'bakımda\')">Bakımda</button>'+
     '<button class="btn btn-danger btn-sm" onclick="delSofor('+a.id+')">Sil</button>'+
     '</div></div></div>';
   }).join(""):'<div class="empty">Henüz şoför eklenmedi</div>';
@@ -450,227 +436,184 @@ function renderSoforler(){
 
 /* TESLİMLER */
 function renderTeslimler(){
-  var ara=(document.getElementById("search-kod").value||"").trim().toUpperCase();
-  var liste=DB.seferler.filter(function(s){return s.durum==="teslim"&&(!ara||s.kod.includes(ara));});
+  var ara=document.getElementById("search-kod")?document.getElementById("search-kod").value.trim().toUpperCase():"";
+  var liste=DB.seferler.filter(function(s){return s.durum==="teslim edildi"&&(!ara||s.kod.includes(ara));});
   document.getElementById("teslim-list").innerHTML=liste.length?liste.map(function(s){
     var sofor=DB.soforler.find(function(a){return a.id==s.sofor;});
     var fotolar=(s.teslimFotolar||[]).concat(s.yuklemeFotolar||[]);
-    var evraklar=s.teslimEvraklar||[];
     return'<div class="item">'+
-    '<div class="item-header"><div><div class="item-title">'+s.firma+'</div>'+
-    '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · Teslim: '+(s.teslimTarih||s.tarih)+'</div></div>'+
+    '<div class="item-header">'+
+    '<div><div class="item-title">'+s.firma+'</div><div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · Teslim: '+(s.teslimTarih||s.tarih)+'</div></div>'+
     '<span class="badge badge-green">Teslim</span></div>'+
     '<div class="detail-grid" style="margin-top:10px">'+
     '<div class="detail-item"><div class="detail-label">ALIM</div><div class="detail-value">'+s.alim+'</div></div>'+
     '<div class="detail-item"><div class="detail-label">TESLİMAT</div><div class="detail-value">'+s.teslimat+'</div></div>'+
     '<div class="detail-item"><div class="detail-label">ŞOFÖR</div><div class="detail-value">'+(sofor?sofor.ad:"—")+'</div></div>'+
-    '<div class="detail-item"><div class="detail-label">SEFERTARİHİ</div><div class="detail-value">'+s.tarih+'</div></div>'+
+    '<div class="detail-item"><div class="detail-label">SEF. TARİHİ</div><div class="detail-value">'+s.tarih+'</div></div>'+
     '</div>'+
     '<div class="code-box">'+s.kod+'</div>'+
-    (fotolar.length?'<div style="margin-top:8px"><div style="font-size:11px;color:#718096;margin-bottom:6px">FOTOĞRAFLAR</div><div class="photo-grid">'+fotolar.map(function(f){return'<div class="photo-thumb"><img src="'+f+'"></div>';}).join("")+'</div>':'</div>')+
-    (evraklar.length?'<div style="margin-top:8px"><div style="font-size:11px;color:#718096;margin-bottom:4px">EVRAKLAR</div>'+evraklar.map(function(e){return'<div class="doc-item"><span>📄</span><span>'+e.ad+'</span><a href="'+e.data+'" download="'+e.ad+'" style="font-size:12px;color:#1a365d">İndir</a></div>';}).join("")+'</div>':'')+
+    (fotolar.length?'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">'+fotolar.map(function(f){return'<img src="'+f+'" style="width:60px;height:60px;object-fit:cover;border-radius:6px">';}).join("")+'</div>':"")+
     '</div>';
-  }).join(""):'<div class="empty">'+(ara?"Eşleşen sefer bulunamadı":"Henüz teslim edilmiş sefer yok")+'</div>';
+  }).join(""):'<div class="empty">'+(ara?"Bu kodla eşleşen sefer bulunamadı":"Henüz teslim edilmiş sefer yok")+'</div>';
 }
 
 /* RAPOR */
 function renderRapor(){
   var toplam=DB.seferler.length;
-  var teslim=DB.seferler.filter(function(s){return s.durum==="teslim";}).length;
+  var teslim=DB.seferler.filter(function(s){return s.durum==="teslim edildi";}).length;
   document.getElementById("r-toplam").textContent=toplam;
   document.getElementById("r-teslim").textContent=teslim;
   document.getElementById("r-oran").textContent="%"+(toplam?Math.round((teslim/toplam)*100):0);
   document.getElementById("r-sofor").textContent=DB.soforler.filter(function(a){return a.durum!=="bakımda";}).length;
   document.getElementById("rapor-list").innerHTML=DB.soforler.length?DB.soforler.map(function(a){
-    var tumSeferler=DB.seferler.filter(function(s){return s.sofor==a.id;});
-    var teslimler=tumSeferler.filter(function(s){return s.durum==="teslim";});
-    var aktifler=tumSeferler.filter(function(s){return s.durum!=="teslim";});
-    var topTonaj=tumSeferler.reduce(function(acc,s){return acc+(parseFloat(s.tonaj)||0);},0);
+    var tum=DB.seferler.filter(function(s){return s.sofor==a.id;});
+    var tes=tum.filter(function(s){return s.durum==="teslim edildi";});
+    var tonaj=tum.reduce(function(acc,s){return acc+(parseFloat(s.tonaj)||0);},0);
     return'<div class="rapor-card">'+
     '<div style="font-size:16px;font-weight:600">'+a.ad+' <span style="font-size:13px;color:#718096;font-weight:400">· '+a.plaka+'</span></div>'+
     '<div class="rapor-stats">'+
-    '<div class="rapor-stat"><div class="rnum">'+tumSeferler.length+'</div><div class="rlbl">Toplam Sefer</div></div>'+
-    '<div class="rapor-stat"><div class="rnum">'+teslimler.length+'</div><div class="rlbl">Teslim</div></div>'+
-    '<div class="rapor-stat"><div class="rnum">'+aktifler.length+'</div><div class="rlbl">Aktif</div></div>'+
+    '<div class="rapor-stat"><div class="rnum">'+tum.length+'</div><div class="rlbl">Toplam Sefer</div></div>'+
+    '<div class="rapor-stat"><div class="rnum">'+tes.length+'</div><div class="rlbl">Teslim Edildi</div></div>'+
+    '<div class="rapor-stat"><div class="rnum">'+(tum.length-tes.length)+'</div><div class="rlbl">Aktif</div></div>'+
     '</div>'+
-    '<div style="margin-top:8px;font-size:12px;color:#718096">Toplam: <strong>'+topTonaj.toFixed(1)+' ton</strong></div>'+
+    '<div style="margin-top:8px;font-size:12px;color:#718096">Toplam Taşınan: <strong>'+tonaj.toFixed(1)+' ton</strong></div>'+
     '</div>';
   }).join(""):'<div class="empty">Henüz şoför eklenmedi</div>';
 }
 
-/* ŞOFÖR MOBİL */
-function asamaIndex(durum){
-  var keys=["hazırlanıyor","yukleme","yola_ciktim","bekleme","indirme","teslim"];
-  return keys.indexOf(durum);
-}
-
-function renderDriver(){
+/* ŞOFÖR MOBİL - AKTİF */
+function renderDriverAktif(){
   if(!currentDriver)return;
-  document.getElementById("driver-name-display").textContent=currentDriver.ad+" · "+currentDriver.plaka;
-  var gorevler=DB.seferler.filter(function(s){return s.sofor==currentDriver.id;});
-  var aktif=gorevler.filter(function(s){return s.durum!=="teslim";});
-  document.getElementById("driver-task-count").textContent=aktif.length+" aktif sefer · "+gorevler.filter(function(s){return s.durum==="teslim";}).length+" teslim edildi";
+  var gorevler=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum!=="teslim edildi";});
+  document.getElementById("drv-task-count").textContent=gorevler.length+" aktif sefer";
   document.getElementById("driver-tasks").innerHTML=gorevler.length?gorevler.map(function(s){
-    return renderTaskCard(s);
-  }).join(""):'<div class="empty">Henüz sefer atanmadı</div>';
-  bindDriverEvents();
+    return buildSeferCard(s);
+  }).join(""):'<div class="empty">Aktif seferiniz yok</div>';
 }
 
-function renderTaskCard(s){
-  var durumIdx=asamaIndex(s.durum);
-  var done=s.durum==="teslim";
-
-  var stepperHtml='<div class="stepper">';
-  var stepKeys=["yukleme","yola_ciktim","bekleme","indirme","teslim"];
-  var stepLabels=["Yükleme","Yola Çıktım","Bekleme","İndirme","Teslim"];
-  var stepIcons=["📦","🚛","⏳","🏭","✅"];
-  stepKeys.forEach(function(k,i){
-    var idx=asamaIndex(k);
-    var isDone=durumIdx>=idx;
-    var isActive=s.durum===k;
-    if(i>0)stepperHtml+='<div class="step-line'+(isDone?" done":"")+'"></div>';
-    stepperHtml+='<div class="step">'+
-    '<div class="step-circle'+(isDone?" done":"")+(isActive?" active":"")+'">'+stepIcons[i]+'</div>'+
-    '<div class="step-label'+(isActive?" active":"")+(isDone&&!isActive?" done":"")+'">'+stepLabels[i]+'</div>'+
+function renderDriverArsiv(){
+  if(!currentDriver)return;
+  var arsiv=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum==="teslim edildi";});
+  document.getElementById("driver-arsiv-list").innerHTML=arsiv.length?arsiv.map(function(s){
+    return'<div class="arsiv-card">'+
+    '<div style="display:flex;justify-content:space-between;align-items:center">'+
+    '<div><div style="font-size:15px;font-weight:600">'+s.firma+'</div>'+
+    '<div style="font-size:12px;color:#718096;margin-top:2px">'+s.urun+' · '+s.tonaj+' ton · Teslim: '+(s.teslimTarih||s.tarih)+'</div></div>'+
+    '<span class="badge badge-green">Teslim</span></div>'+
+    '<div style="margin-top:8px;font-size:13px;color:#718096">📍 '+s.alim+' → '+s.teslimat+'</div>'+
+    '<div class="code-box" style="margin-top:8px">'+s.kod+'</div>'+
     '</div>';
-  });
-  stepperHtml+='</div>';
-
-  var asamalarHtml='<div class="asamalar">';
-  var nextKeys=[];
-  if(s.durum==="hazırlanıyor")nextKeys=["yukleme"];
-  else if(s.durum==="yukleme")nextKeys=["yola_ciktim"];
-  else if(s.durum==="yola_ciktim")nextKeys=["bekleme","indirme"];
-  else if(s.durum==="bekleme")nextKeys=["indirme"];
-  else if(s.durum==="indirme")nextKeys=["teslim"];
-
-  ASAMALAR.forEach(function(a){
-    var idx=asamaIndex(a.key);
-    var isDone=durumIdx>=idx;
-    var isNext=nextKeys.indexOf(a.key)>=0;
-    var cls="asama-btn"+(isDone?" tamamlandi":"")+(isNext?" aktif":"")+((!isDone&&!isNext)?" disabled":"");
-    var zaman=s.asamalar&&s.asamalar[a.key]?" · "+s.asamalar[a.key]:"";
-    asamalarHtml+='<div class="'+cls+'"'+(isNext?' onclick="soforAsama('+s.id+',\''+a.key+'\')"':'')+'>'+
-    '<span class="asama-icon">'+a.icon+'</span>'+
-    '<div class="asama-text"><div class="asama-title">'+a.title+(isDone?" ✓":"")+zaman+'</div>'+
-    '<div class="asama-sub">'+a.sub+'</div></div></div>';
-
-    if(a.key==="yukleme"&&s.durum==="yukleme"){
-      asamalarHtml+='<div class="asama-detay open" id="detay-yukleme-'+s.id+'">'+
-      '<div style="font-size:13px;font-weight:600;margin-bottom:8px">📷 Yükleme Fotoğrafları</div>'+
-      '<div class="photo-grid" id="yukleme-photos-'+s.id+'">'+
-      (s.yuklemeFotolar||[]).map(function(f,i){return'<div class="photo-thumb"><img src="'+f+'"><button class="rm-btn" onclick="removePhoto('+s.id+',\'yukleme\','+i+')">✕</button></div>';}).join("")+
-      '</div>'+
-      '<div class="upload-area" onclick="document.getElementById(\'inp-yukleme-'+s.id+'\').click()">📸<p>Fotoğraf çek veya seç</p></div>'+
-      '<input type="file" id="inp-yukleme-'+s.id+'" accept="image/*" multiple capture="environment" style="display:none" onchange="uploadPhotos(this,'+s.id+',\'yukleme\')">'+
-      '</div>';
-    }
-
-    if(a.key==="teslim"&&s.durum==="indirme"){
-      asamalarHtml+='<div class="asama-detay open" id="detay-teslim-'+s.id+'">'+
-      '<div style="font-size:13px;font-weight:600;margin-bottom:8px">📷 Teslim Fotoğrafları</div>'+
-      '<div class="photo-grid" id="teslim-photos-'+s.id+'">'+
-      (s.teslimFotolar||[]).map(function(f,i){return'<div class="photo-thumb"><img src="'+f+'"><button class="rm-btn" onclick="removePhoto('+s.id+',\'teslim\','+i+')">✕</button></div>';}).join("")+
-      '</div>'+
-      '<div class="upload-area" onclick="document.getElementById(\'inp-teslim-'+s.id+'\').click()">📸<p>Teslim fotoğrafı ekle</p></div>'+
-      '<input type="file" id="inp-teslim-'+s.id+'" accept="image/*" multiple capture="environment" style="display:none" onchange="uploadPhotos(this,'+s.id+',\'teslim\')">'+
-      '<div style="font-size:13px;font-weight:600;margin:10px 0 8px">📄 Evrak Yükle (PDF veya fotoğraf)</div>'+
-      '<div id="teslim-evraklar-'+s.id+'">'+
-      (s.teslimEvraklar||[]).map(function(e,i){return'<div class="doc-item"><span>📄</span><span>'+e.ad+'</span><button class="btn btn-danger btn-sm" onclick="removeEvrak('+s.id+','+i+')">Sil</button></div>';}).join("")+
-      '</div>'+
-      '<div class="upload-area" onclick="document.getElementById(\'inp-evrak-'+s.id+'\').click()">📎<p>PDF veya imzalı evrak ekle</p></div>'+
-      '<input type="file" id="inp-evrak-'+s.id+'" accept=".pdf,image/*" multiple style="display:none" onchange="uploadEvrak(this,'+s.id+')">'+
-      '</div>';
-    }
-  });
-
-  if(done){
-    asamalarHtml+='<div class="code-box">'+s.kod+'</div>';
-  }
-  asamalarHtml+='</div>';
-
-  return'<div class="task-card">'+
-  '<div class="task-card-header">'+
-  '<div style="display:flex;justify-content:space-between;align-items:center">'+
-  '<div style="font-size:16px;font-weight:700">'+s.firma+'</div>'+
-  '<span class="badge '+badgeCls(s.durum)+'">'+badgeLabel(s.durum)+'</span></div>'+
-  '</div>'+
-  '<div class="task-card-body">'+
-  '<div class="task-info-grid">'+
-  '<div class="task-info"><div class="task-info-label">ÜRÜN</div><div class="task-info-value">'+s.urun+'</div></div>'+
-  '<div class="task-info"><div class="task-info-label">TONAJ</div><div class="task-info-value">'+s.tonaj+' ton</div></div>'+
-  '<div class="task-info"><div class="task-info-label">ALIM</div><div class="task-info-value">'+s.alim+'</div></div>'+
-  '<div class="task-info"><div class="task-info-label">TESLİMAT</div><div class="task-info-value">'+s.teslimat+'</div></div>'+
-  '</div>'+
-  stepperHtml+
-  asamalarHtml+
-  '</div></div>';
+  }).join(""):'<div class="empty">Henüz teslim edilmiş seferiniz yok</div>';
 }
 
-function bindDriverEvents(){}
+function buildSeferCard(s){
+  var asamaIdx=s.asama;
+  var html='<div class="sefer-card">'+
+  '<div class="sefer-card-header">'+
+  '<div style="display:flex;justify-content:space-between;align-items:flex-start">'+
+  '<div><div style="font-size:16px;font-weight:700">'+s.firma+'</div>'+
+  '<div style="font-size:12px;color:#718096;margin-top:3px">'+s.tarih+' · '+s.urun+' · '+s.tonaj+' ton</div></div>'+
+  '<span class="badge '+badgeCls(s.durum)+'">'+s.durum+'</span>'+
+  '</div></div>'+
+  '<div class="sefer-info">'+
+  '<div class="sefer-info-item"><div class="sefer-info-label">ALIM ADRESİ</div><div class="sefer-info-value">'+s.alim+'</div></div>'+
+  '<div class="sefer-info-item"><div class="sefer-info-label">TESLİMAT ADRESİ</div><div class="sefer-info-value">'+s.teslimat+'</div></div>'+
+  '<div class="sefer-info-item"><div class="sefer-info-label">TAŞINAN ÜRÜN</div><div class="sefer-info-value">'+s.urun+'</div></div>'+
+  '<div class="sefer-info-item"><div class="sefer-info-label">TONAJ</div><div class="sefer-info-value">'+s.tonaj+' ton</div></div>'+
+  '</div>'+
+  '<div class="asamalar">'+
+  '<div class="asamalar-title">SEFER AŞAMALARI</div>'+
+  '<div class="asama-steps">';
+  ASAMALAR.forEach(function(asama,i){
+    var cls="asama-btn";
+    if(i<asamaIdx)cls+=" done";
+    else if(i===asamaIdx)cls+=" active";
+    else if(i>asamaIdx+1)cls+=" disabled";
+    html+='<button class="'+cls+'" onclick="'+((i<=asamaIdx+1&&i>asamaIdx)?"setSeferAsama("+s.id+","+i+")":'void(0)')+'">'+(i<asamaIdx?"✓ ":"")+asama+'</button>';
+  });
+  html+='</div>';
 
-function soforAsama(id,asama){
-  setSeferDurum(id,asama);
-  renderDriver();
-}
-
-function uploadPhotos(input,seferId,tip){
-  var s=DB.seferler.find(function(x){return x.id===seferId;});
-  if(!s)return;
-  var files=Array.from(input.files);
-  var done=0;
-  files.forEach(function(file){
-    resizeImg(file,function(data){
-      if(tip==="yukleme"){s.yuklemeFotolar=s.yuklemeFotolar||[];s.yuklemeFotolar.push(data);}
-      else{s.teslimFotolar=s.teslimFotolar||[];s.teslimFotolar.push(data);}
-      done++;
-      if(done===files.length){saveDB();renderDriver();}
+  // Yükleme aşamasında fotoğraf yükleme
+  if(asamaIdx>=0){
+    html+='<div class="upload-area">'+
+    '<div class="upload-title">📷 Yükleme Fotoğrafları</div>'+
+    '<div class="upload-btns">'+
+    '<label class="upload-btn">📷 Kamera<input type="file" accept="image/*" capture="environment" style="display:none" onchange="uploadFoto(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
+    '<label class="upload-btn">🖼 Albüm<input type="file" accept="image/*" style="display:none" onchange="uploadFoto(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
+    '</div>'+
+    '<div class="thumb-row" id="yukfoto-'+s.id+'">';
+    (s.yuklemeFotolar||[]).forEach(function(f,fi){
+      html+='<div class="thumb"><img src="'+f+'"><button class="thumb-del" onclick="delFoto('+s.id+',\'yuklemeFotolar\','+fi+')">✕</button></div>';
     });
-  });
-}
+    html+='</div></div>';
+  }
 
-function uploadEvrak(input,seferId){
-  var s=DB.seferler.find(function(x){return x.id===seferId;});
-  if(!s)return;
-  var files=Array.from(input.files);
-  var done=0;
-  files.forEach(function(file){
-    if(file.type.startsWith("image/")){
-      resizeImg(file,function(data){
-        s.teslimEvraklar=s.teslimEvraklar||[];
-        s.teslimEvraklar.push({ad:file.name,data:data,tip:"image"});
-        done++;if(done===files.length){saveDB();renderDriver();}
+  // Teslim aşamasında ek yükleme
+  if(asamaIdx===ASAMALAR.length-1){
+    html+='<div class="upload-area" style="margin-top:10px">'+
+    '<div class="upload-title">✅ Teslim Belgesi ve Fotoğrafları</div>'+
+    '<div class="upload-btns">'+
+    '<label class="upload-btn">📷 Kamera<input type="file" accept="image/*" capture="environment" style="display:none" onchange="uploadFoto(event,'+s.id+',\'teslimFotolar\')"></label>'+
+    '<label class="upload-btn">🖼 Albüm<input type="file" accept="image/*" style="display:none" onchange="uploadFoto(event,'+s.id+',\'teslimFotolar\')"></label>'+
+    '<label class="upload-btn">📄 Evrak<input type="file" accept="image/*,application/pdf,.pdf" style="display:none" onchange="uploadEvrak(event,'+s.id+')"></label>'+
+    '</div>'+
+    '<div class="thumb-row" id="teslfoto-'+s.id+'">';
+    (s.teslimFotolar||[]).forEach(function(f,fi){
+      html+='<div class="thumb"><img src="'+f+'"><button class="thumb-del" onclick="delFoto('+s.id+',\'teslimFotolar\','+fi+')">✕</button></div>';
+    });
+    html+='</div>';
+    if((s.teslimEvraklar||[]).length){
+      html+='<div style="margin-top:8px">';
+      s.teslimEvraklar.forEach(function(e,ei){
+        html+='<div class="doc-item">📄 '+e.ad+' <button onclick="delEvrak('+s.id+','+ei+')" style="margin-left:auto;background:none;border:none;color:#c53030;cursor:pointer;font-size:12px">Sil</button></div>';
       });
-    }else{
-      readFile(file,function(data,name){
-        s.teslimEvraklar=s.teslimEvraklar||[];
-        s.teslimEvraklar.push({ad:name,data:data,tip:"pdf"});
-        done++;if(done===files.length){saveDB();renderDriver();}
-      });
+      html+='</div>';
     }
+    html+='<div class="code-box" style="margin-top:10px">'+s.kod+'</div>'+
+    '</div>';
+  }
+
+  html+='</div></div>';
+  return html;
+}
+
+function uploadFoto(event,seferId,alan){
+  var file=event.target.files[0];if(!file)return;
+  resizeImg(file,function(data){
+    var s=DB.seferler.find(function(x){return x.id===seferId;});
+    if(!s)return;
+    if(!s[alan])s[alan]=[];
+    s[alan].push(data);
+    saveDB();renderDriverAktif();
   });
 }
 
-function removePhoto(seferId,tip,idx){
+function uploadEvrak(event,seferId){
+  var file=event.target.files[0];if(!file)return;
   var s=DB.seferler.find(function(x){return x.id===seferId;});
   if(!s)return;
-  if(tip==="yukleme")s.yuklemeFotolar.splice(idx,1);
-  else s.teslimFotolar.splice(idx,1);
-  saveDB();renderDriver();
+  if(!s.teslimEvraklar)s.teslimEvraklar=[];
+  s.teslimEvraklar.push({ad:file.name});
+  saveDB();renderDriverAktif();
 }
 
-function removeEvrak(seferId,idx){
+function delFoto(seferId,alan,idx){
   var s=DB.seferler.find(function(x){return x.id===seferId;});
-  if(!s)return;
+  if(!s||!s[alan])return;
+  s[alan].splice(idx,1);
+  saveDB();renderDriverAktif();
+}
+
+function delEvrak(seferId,idx){
+  var s=DB.seferler.find(function(x){return x.id===seferId;});
+  if(!s||!s.teslimEvraklar)return;
   s.teslimEvraklar.splice(idx,1);
-  saveDB();renderDriver();
+  saveDB();renderDriverAktif();
 }
 
 function renderDriverBtns(){
   document.getElementById("driverBtns").innerHTML=DB.soforler.length?DB.soforler.map(function(a){
-    return'<button class="role-btn" onclick="login(\'driver\','+a.id+')">'+
-    '<div class="role-title">🚛 '+a.ad+'</div>'+
-    '<div class="role-sub">'+a.plaka+' · '+a.tip+'</div></button>';
+    return'<button class="role-btn" onclick="login(\'driver\','+a.id+')"><div class="role-title">🚛 '+a.ad+'</div><div class="role-sub">'+a.plaka+' · '+a.tip+'</div></button>';
   }).join(""):'<div style="font-size:13px;color:#a0aec0;text-align:center;padding:10px">Henüz şoför eklenmedi</div>';
 }
 
