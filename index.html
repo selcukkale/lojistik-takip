@@ -25,7 +25,6 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .btn{border:none;border-radius:8px;padding:10px 16px;font-size:14px;cursor:pointer;font-family:Arial,sans-serif;font-weight:500}
 .btn-primary{background:#1a365d;color:#fff}
 .btn-success{background:#276749;color:#fff}
-.btn-warning{background:#c05621;color:#fff}
 .btn-danger{background:#c53030;color:#fff}
 .btn-gray{background:#e2e8f0;color:#4a5568}
 .btn-sm{padding:7px 12px;font-size:12px}
@@ -62,6 +61,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .code-box{background:#1a202c;color:#68d391;border-radius:8px;padding:10px 14px;font-family:monospace;font-size:15px;letter-spacing:3px;text-align:center;margin:10px 0}
 .sofor-ata-row{display:flex;gap:8px;align-items:center;margin-top:10px;background:#f0f4f8;border-radius:8px;padding:10px;flex-wrap:wrap}
 .sofor-ata-row select{flex:1;min-width:120px;padding:8px 10px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;background:#fff;color:#1a202c;outline:none}
+/* LOGIN */
 .login-screen{min-height:100vh;background:#1a365d;display:flex;align-items:center;justify-content:center;padding:20px}
 .login-box{background:#fff;border-radius:20px;padding:32px 24px;width:100%;max-width:380px}
 .login-logo{text-align:center;margin-bottom:24px;padding:20px;background:#1a365d;border-radius:12px}
@@ -70,6 +70,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .login-tab{flex:1;padding:10px;border-radius:8px;border:2px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;font-size:14px;font-weight:600;color:#718096;font-family:Arial,sans-serif}
 .login-tab.active{border-color:#1a365d;color:#1a365d;background:#ebf4ff}
 .login-error{background:#fed7d7;color:#c53030;border-radius:8px;padding:10px 12px;font-size:13px;margin-bottom:12px;display:none}
+/* DRIVER */
 .drv-screen{background:#f0f4f8;min-height:100vh}
 .drv-hero{background:#1a365d;padding:20px 16px 24px}
 .drv-hero-name{color:#fff;font-size:20px;font-weight:700}
@@ -84,7 +85,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .drv-wrap{padding:14px}
 .sefer-card{background:#fff;border-radius:14px;border:1px solid #e2e8f0;margin-bottom:14px;overflow:hidden}
 .sefer-card-top{padding:14px 16px;border-bottom:1px solid #f0f4f8}
-.sefer-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#f7fafc;border-bottom:1px solid #f0f4f8}
+.sefer-card-grid{display:grid;grid-template-columns:1fr 1fr;background:#f7fafc;border-bottom:1px solid #f0f4f8}
 .sefer-card-cell{padding:12px 14px;border-right:1px solid #f0f4f8}
 .sefer-card-cell:nth-child(even){border-right:none}
 .scell-label{font-size:10px;color:#a0aec0;letter-spacing:1px;margin-bottom:3px}
@@ -92,21 +93,49 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 .asamalar{padding:14px 16px}
 .asama-title{font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:10px}
 .asama-steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.asama-btn{padding:9px 13px;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-size:13px;cursor:pointer;font-family:Arial,sans-serif;font-weight:600;-webkit-tap-highlight-color:transparent}
+.asama-btn{padding:9px 13px;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-size:13px;cursor:pointer;font-family:Arial,sans-serif;font-weight:600}
 .asama-btn.done{border-color:#276749;background:#c6f6d5;color:#276749}
 .asama-btn.active{border-color:#1a365d;background:#1a365d;color:#fff}
 .asama-btn.next{border-color:#c05621;background:#fff;color:#c05621}
 .asama-btn.disabled{opacity:.35;cursor:not-allowed}
+/* UPLOAD */
 .upload-area{background:#f7fafc;border:2px dashed #cbd5e0;border-radius:12px;padding:14px;margin-top:10px}
 .upload-title{font-size:13px;font-weight:700;color:#4a5568;margin-bottom:10px}
 .upload-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .upload-btn{padding:10px 14px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;font-size:13px;cursor:pointer;font-family:Arial,sans-serif;display:inline-block}
 .thumb-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .thumb{position:relative;width:76px;height:76px;flex-shrink:0}
-.thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px;cursor:pointer}
 .thumb-del{position:absolute;top:-6px;right:-6px;background:#c53030;color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;line-height:20px;text-align:center;padding:0}
-.doc-item{display:flex;align-items:center;gap:8px;background:#fff;border-radius:8px;padding:9px 12px;border:1px solid #e2e8f0;margin-top:6px;font-size:13px}
+/* DOC PREVIEW */
+.doc-card{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;margin-top:6px}
+.doc-card-icon{width:38px;height:38px;background:#fed7d7;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.doc-card-name{font-size:13px;font-weight:500;flex:1;word-break:break-all;color:#1a202c}
+.doc-card-actions{display:flex;gap:6px;flex-shrink:0}
+.doc-card-btn{padding:5px 10px;border-radius:6px;border:1px solid #e2e8f0;background:#f7fafc;font-size:12px;cursor:pointer;text-decoration:none;color:#1a365d;font-family:Arial,sans-serif}
+/* MODAL */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal-inner{position:relative;max-width:100%;max-height:100%;text-align:center}
+.modal-inner img{max-width:90vw;max-height:75vh;border-radius:8px;object-fit:contain;display:block}
+.modal-close{position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:30px;cursor:pointer;line-height:1}
+.modal-actions{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.modal-dl{background:#276749;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600}
+/* AUTOCOMPLETE */
+.addr-wrap{position:relative}
+.addr-suggestions{position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid #e2e8f0;border-radius:8px;z-index:200;max-height:180px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,.12);display:none}
+.addr-sugg-item{padding:10px 12px;font-size:13px;cursor:pointer;border-bottom:1px solid #f0f4f8;line-height:1.4;color:#1a202c}
+.addr-sugg-item:hover{background:#f0f4f8}
+.addr-sugg-item:last-child{border-bottom:none}
+.distance-badge{background:#ebf8ff;border:1px solid #bee3f8;border-radius:8px;padding:9px 12px;font-size:13px;color:#1a365d;margin-top:10px;text-align:center;font-weight:700;display:none}
+/* STOPS */
+.stops-section{margin-top:10px}
+.stop-row{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
+.stop-row .addr-wrap{flex:1}
+.stop-del-btn{background:#fed7d7;border:none;border-radius:8px;padding:10px 12px;cursor:pointer;color:#c53030;font-size:15px;flex-shrink:0;margin-top:0;line-height:1}
+.add-stop-btn{background:#f7fafc;border:1px dashed #cbd5e0;border-radius:8px;padding:10px;width:100%;cursor:pointer;color:#718096;font-size:13px;text-align:center;font-family:Arial,sans-serif;margin-top:4px}
+/* ARSIV */
 .arsiv-card{background:#fff;border-radius:12px;padding:14px;border:1px solid #e2e8f0;margin-bottom:10px;border-left:4px solid #276749}
+/* RAPOR */
 .rapor-card{background:#fff;border-radius:12px;padding:16px;border:1px solid #e2e8f0;margin-bottom:10px}
 .rapor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
 .rapor-stat{background:#f7fafc;border-radius:8px;padding:8px;text-align:center}
@@ -119,6 +148,17 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
 </head>
 <body>
 <canvas id="canvas" style="display:none"></canvas>
+
+<!-- PHOTO MODAL -->
+<div id="photo-modal" class="modal-overlay hidden" onclick="closeModal()">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <img id="modal-img" src="" alt="">
+    <div class="modal-actions">
+      <a id="modal-dl" class="modal-dl" download="barsel-foto.jpg">⬇ İndir</a>
+    </div>
+  </div>
+</div>
 
 <!-- GİRİŞ -->
 <div id="loginScreen" class="login-screen">
@@ -155,9 +195,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
     <div class="header-inner">
       <div class="header-logo">
         <img src="https://api.barseltransport.com/media/barsel-logo-white.png" style="height:30px;filter:brightness(0) invert(1)">
-        <div>
-          <div class="header-logo-sub">Yönetici Paneli</div>
-        </div>
+        <div><div class="header-logo-sub">Yönetici Paneli</div></div>
       </div>
       <button class="switch-btn" onclick="logout()">Çıkış</button>
     </div>
@@ -171,6 +209,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
     </div>
   </div>
   <div class="wrap">
+    <!-- SEFERLER -->
     <div id="tab-seferler">
       <div class="summary-grid">
         <div class="summary-card"><div class="num" id="sf-hazir">0</div><div class="lbl">Hazır</div></div>
@@ -185,21 +224,38 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
           <div><label class="form-label">ŞOFÖR</label><select class="form-input" id="ff-sofor"><option value="">— Sonra atanabilir —</option></select></div>
         </div>
         <div class="form-grid">
-          <div><label class="form-label">ALIM ADRESİ</label><input class="form-input" id="ff-alim" placeholder="örn. İzmir, Kemalpaşa OSB"></div>
-          <div><label class="form-label">TESLİMAT ADRESİ</label><input class="form-input" id="ff-teslimat" placeholder="örn. İstanbul, Dudullu"></div>
-        </div>
-        <div class="form-grid">
           <div><label class="form-label">TAŞINAN ÜRÜN</label><input class="form-input" id="ff-urun" placeholder="örn. Tekstil Mamulü"></div>
           <div><label class="form-label">TONAJ (ton)</label><input class="form-input" type="number" id="ff-tonaj" placeholder="15"></div>
         </div>
+
+        <label class="form-label">ALIM ADRESİ</label>
+        <div class="addr-wrap">
+          <input class="form-input" id="ff-alim" placeholder="Adres yaz, listeden seç..." autocomplete="off" oninput="onAlimInput(this.value)">
+          <div class="addr-suggestions" id="alim-sugg"></div>
+        </div>
+
+        <div class="stops-section">
+          <label class="form-label">EKSTRA DURAKLAR (opsiyonel)</label>
+          <div id="extra-stops"></div>
+          <button class="add-stop-btn" onclick="addExtraStop()">+ Durak Ekle</button>
+        </div>
+
+        <label class="form-label">TESLİMAT ADRESİ</label>
+        <div class="addr-wrap">
+          <input class="form-input" id="ff-teslimat" placeholder="Adres yaz, listeden seç..." autocomplete="off" oninput="onTeslimInput(this.value)">
+          <div class="addr-suggestions" id="teslim-sugg"></div>
+        </div>
+        <div class="distance-badge" id="distance-display"></div>
+
         <div class="form-actions">
           <button class="btn btn-primary" onclick="addSefer()">Sefer Oluştur</button>
-          <button class="btn btn-gray btn-sm" onclick="toggleForm('sefer-form')">İptal</button>
+          <button class="btn btn-gray btn-sm" onclick="toggleForm('sefer-form');resetSeferForm()">İptal</button>
         </div>
       </div>
       <div class="list" id="sefer-list"></div>
     </div>
 
+    <!-- ŞOFÖRLER -->
     <div id="tab-soforler" class="hidden">
       <div class="form-box" id="sofor-form">
         <div class="form-title">👤 Yeni Şoför & Araç</div>
@@ -225,6 +281,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       <div class="list" id="sofor-list"></div>
     </div>
 
+    <!-- TESLİMLER -->
     <div id="tab-teslimler" class="hidden">
       <div style="margin-bottom:12px">
         <input class="form-input" id="search-kod" placeholder="🔍 Sefer kodu ile ara... SF-2025-001" oninput="renderTeslimler()" style="max-width:340px">
@@ -232,6 +289,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       <div class="list" id="teslim-list"></div>
     </div>
 
+    <!-- RAPOR -->
     <div id="tab-rapor" class="hidden">
       <div class="summary-grid">
         <div class="summary-card"><div class="num" id="r-toplam">0</div><div class="lbl">Toplam</div></div>
@@ -282,8 +340,16 @@ var DB={
   sayac:parseInt(localStorage.getItem("barsel_sayac")||"0")
 };
 var ADMIN={user:"admin",pass:"barsel2025"};
-var currentRole=null,currentDriver=null,activeTab="seferler",openItems={},loginTab="admin";
+var currentDriver=null,activeTab="seferler",openItems={},loginTab="admin";
 var ASAMALAR=["Yükleme","Yola Çıktım","Bekleme","İndirme","Teslim Edildi"];
+
+// Form state
+var FS={
+  alimCoords:null,alimText:"",
+  teslimCoords:null,teslimText:"",
+  extraStops:[],
+  mesafe:null
+};
 
 function saveDB(){
   try{
@@ -318,6 +384,12 @@ function resizeImg(file,cb){
   r.readAsDataURL(file);
 }
 
+function readFileAsBase64(file,cb){
+  var r=new FileReader();
+  r.onload=function(e){cb(e.target.result);};
+  r.readAsDataURL(file);
+}
+
 function show(id){document.getElementById(id).classList.remove("hidden");}
 function hide(id){document.getElementById(id).classList.add("hidden");}
 function toggleForm(id){document.getElementById(id).classList.toggle("open");}
@@ -328,6 +400,164 @@ function badgeCls(d){
   return m[d]||"badge-gray";
 }
 
+/* ---- MODAL ---- */
+function openPhoto(src){
+  document.getElementById("modal-img").src=src;
+  document.getElementById("modal-dl").href=src;
+  show("photo-modal");
+}
+function closeModal(){
+  hide("photo-modal");
+  document.getElementById("modal-img").src="";
+}
+
+/* ---- ADDRESS AUTOCOMPLETE ---- */
+var _searchTimer={};
+function debounceSearch(key,fn,ms){
+  clearTimeout(_searchTimer[key]);
+  _searchTimer[key]=setTimeout(fn,ms||400);
+}
+
+function nominatim(query,cb){
+  if(!query||query.length<3){cb([]);return;}
+  fetch("https://nominatim.openstreetmap.org/search?format=json&q="+encodeURIComponent(query)+"&limit=5&countrycodes=tr",{headers:{"Accept-Language":"tr"}})
+  .then(function(r){return r.json();})
+  .then(cb)
+  .catch(function(){cb([]);});
+}
+
+function showSugg(results,suggId,inputEl,onSelect){
+  var el=document.getElementById(suggId);
+  if(!el)return;
+  if(!results.length){el.style.display="none";el.innerHTML="";return;}
+  el._r=results;el._sel=onSelect;el._inp=inputEl;
+  el.innerHTML=results.map(function(r,i){
+    var short=r.display_name.split(",").slice(0,3).join(",");
+    return'<div class="addr-sugg-item" onclick="pickSugg(\''+suggId+'\','+i+')">'+short+'</div>';
+  }).join("");
+  el.style.display="block";
+}
+
+function pickSugg(suggId,idx){
+  var el=document.getElementById(suggId);
+  if(!el||!el._r)return;
+  var r=el._r[idx];
+  var short=r.display_name.split(",").slice(0,3).join(",");
+  el._inp.value=short;
+  el.style.display="none";
+  if(el._sel)el._sel(r,short);
+}
+
+// Close suggestions on outside click
+document.addEventListener("click",function(e){
+  document.querySelectorAll(".addr-suggestions").forEach(function(el){
+    if(!el.contains(e.target)&&el._inp&&!el._inp.contains(e.target)){
+      el.style.display="none";
+    }
+  });
+});
+
+function onAlimInput(val){
+  FS.alimCoords=null;FS.mesafe=null;
+  document.getElementById("distance-display").style.display="none";
+  debounceSearch("alim",function(){
+    nominatim(val,function(res){
+      showSugg(res,"alim-sugg",document.getElementById("ff-alim"),function(r,short){
+        FS.alimCoords={lat:parseFloat(r.lat),lon:parseFloat(r.lon)};
+        FS.alimText=short;
+        calcDistance();
+      });
+    });
+  });
+}
+
+function onTeslimInput(val){
+  FS.teslimCoords=null;FS.mesafe=null;
+  document.getElementById("distance-display").style.display="none";
+  debounceSearch("teslim",function(){
+    nominatim(val,function(res){
+      showSugg(res,"teslim-sugg",document.getElementById("ff-teslimat"),function(r,short){
+        FS.teslimCoords={lat:parseFloat(r.lat),lon:parseFloat(r.lon)};
+        FS.teslimText=short;
+        calcDistance();
+      });
+    });
+  });
+}
+
+function calcDistance(){
+  var wps=[];
+  if(FS.alimCoords)wps.push(FS.alimCoords);
+  FS.extraStops.forEach(function(s){if(s.coords)wps.push(s.coords);});
+  if(FS.teslimCoords)wps.push(FS.teslimCoords);
+  if(wps.length<2)return;
+  var coords=wps.map(function(w){return w.lon+","+w.lat;}).join(";");
+  fetch("https://router.project-osrm.org/route/v1/driving/"+coords+"?overview=false")
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.routes&&d.routes[0]){
+      var km=Math.round(d.routes[0].distance/1000);
+      FS.mesafe=km;
+      var el=document.getElementById("distance-display");
+      el.textContent="📏 Toplam Mesafe: "+km+" km";
+      el.style.display="block";
+    }
+  })
+  .catch(function(){});
+}
+
+/* ---- EXTRA STOPS ---- */
+function addExtraStop(){
+  FS.extraStops.push({adres:"",coords:null});
+  renderExtraStops();
+}
+
+function removeStop(idx){
+  FS.extraStops.splice(idx,1);
+  renderExtraStops();
+  calcDistance();
+}
+
+function renderExtraStops(){
+  var cont=document.getElementById("extra-stops");
+  if(!cont)return;
+  cont.innerHTML=FS.extraStops.map(function(s,i){
+    return'<div class="stop-row">'+
+    '<div class="addr-wrap" style="flex:1">'+
+    '<input class="form-input" id="stop-inp-'+i+'" placeholder="Durak adresi..." value="'+(s.adres||"")+'" autocomplete="off" oninput="onStopInput('+i+',this.value)">'+
+    '<div class="addr-suggestions" id="stop-sugg-'+i+'" style="display:none"></div>'+
+    '</div>'+
+    '<button class="stop-del-btn" onclick="removeStop('+i+')">✕</button>'+
+    '</div>';
+  }).join("");
+}
+
+function onStopInput(idx,val){
+  FS.extraStops[idx].adres=val;
+  FS.extraStops[idx].coords=null;
+  debounceSearch("stop"+idx,function(){
+    nominatim(val,function(res){
+      var inp=document.getElementById("stop-inp-"+idx);
+      if(!inp)return;
+      showSugg(res,"stop-sugg-"+idx,inp,function(r,short){
+        FS.extraStops[idx]={adres:short,coords:{lat:parseFloat(r.lat),lon:parseFloat(r.lon)}};
+        calcDistance();
+      });
+    });
+  });
+}
+
+function resetSeferForm(){
+  FS={alimCoords:null,alimText:"",teslimCoords:null,teslimText:"",extraStops:[],mesafe:null};
+  renderExtraStops();
+  document.getElementById("distance-display").style.display="none";
+  ["ff-firma","ff-alim","ff-teslimat","ff-urun","ff-tonaj"].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.value="";
+  });
+  document.getElementById("ff-sofor").value="";
+}
+
+/* ---- LOGIN ---- */
 function setLoginTab(tab){
   loginTab=tab;
   document.getElementById("ltab-admin").classList.toggle("active",tab==="admin");
@@ -338,50 +568,45 @@ function setLoginTab(tab){
 }
 
 function showError(msg){
-  var el=document.getElementById("login-error");
-  el.textContent=msg;el.style.display="block";
+  var el=document.getElementById("login-error");el.textContent=msg;el.style.display="block";
 }
 
 function doAdminLogin(){
   var u=document.getElementById("admin-user").value.trim();
   var p=document.getElementById("admin-pass").value;
-  if(u===ADMIN.user&&p===ADMIN.pass){
-    hide("loginScreen");show("adminScreen");renderAll();
-  }else{showError("Kullanıcı adı veya şifre hatalı.");}
+  if(u===ADMIN.user&&p===ADMIN.pass){hide("loginScreen");show("adminScreen");renderAll();}
+  else showError("Kullanıcı adı veya şifre hatalı.");
 }
 
 function doSoforLogin(){
   var u=document.getElementById("sofor-user").value.trim().toLowerCase();
   var p=document.getElementById("sofor-pass").value;
-  var sofor=DB.soforler.find(function(s){return s.kadi&&s.kadi.toLowerCase()===u&&s.sifre===p;});
-  if(sofor){
-    currentDriver=sofor;
-    hide("loginScreen");show("driverScreen");
-    document.getElementById("drv-name").textContent=sofor.ad;
-    document.getElementById("drv-plaka").textContent=sofor.plaka+" · "+sofor.tip;
+  var s=DB.soforler.find(function(x){return x.kadi&&x.kadi.toLowerCase()===u&&x.sifre===p;});
+  if(s){
+    currentDriver=s;hide("loginScreen");show("driverScreen");
+    document.getElementById("drv-name").textContent=s.ad;
+    document.getElementById("drv-plaka").textContent=s.plaka+" · "+s.tip;
     showDriverTab("aktif");
-  }else{showError("Kullanıcı adı veya şifre hatalı.");}
+  }else showError("Kullanıcı adı veya şifre hatalı.");
 }
 
 function logout(){
   hide("adminScreen");hide("driverScreen");show("loginScreen");
-  currentRole=null;currentDriver=null;
-  document.getElementById("admin-user").value="";
-  document.getElementById("admin-pass").value="";
-  document.getElementById("sofor-user").value="";
-  document.getElementById("sofor-pass").value="";
+  currentDriver=null;
+  ["admin-user","admin-pass","sofor-user","sofor-pass"].forEach(function(id){document.getElementById(id).value="";});
   document.getElementById("login-error").style.display="none";
 }
 
+/* ---- DRIVER TABS ---- */
 function showDriverTab(tab){
   document.getElementById("drv-aktif").classList.toggle("hidden",tab!=="aktif");
   document.getElementById("drv-arsiv").classList.toggle("hidden",tab!=="arsiv");
   document.getElementById("drv-tab-aktif").classList.toggle("active",tab==="aktif");
   document.getElementById("drv-tab-arsiv").classList.toggle("active",tab==="arsiv");
-  if(tab==="aktif")renderDriverAktif();
-  else renderDriverArsiv();
+  if(tab==="aktif")renderDriverAktif();else renderDriverArsiv();
 }
 
+/* ---- ADMIN TABS ---- */
 function showTab(tab){
   activeTab=tab;
   var tabs=["seferler","soforler","teslimler","rapor"];
@@ -397,13 +622,14 @@ function adminFab(){
   if(f[activeTab])toggleForm(f[activeTab]);
 }
 
+/* ---- ŞOFÖR ATA ---- */
 function soforAta(seferId){
-  var sel=document.getElementById("sofor-select-"+seferId);
-  if(!sel)return;
+  var sel=document.getElementById("sofor-select-"+seferId);if(!sel)return;
   var s=DB.seferler.find(function(x){return x.id===seferId;});
   if(s){s.sofor=sel.value;saveDB();renderSeferler();}
 }
 
+/* ---- SEFER ---- */
 function addSefer(){
   var firma=document.getElementById("ff-firma").value.trim();
   var alim=document.getElementById("ff-alim").value.trim();
@@ -413,25 +639,24 @@ function addSefer(){
   DB.seferler.push({
     id:Date.now(),kod:genKod(),
     firma:firma,sofor:document.getElementById("ff-sofor").value,
-    alim:alim,teslimat:teslimat,urun:urun,
-    tonaj:document.getElementById("ff-tonaj").value||"-",
+    alim:alim,alimCoords:FS.alimCoords,
+    teslimat:teslimat,teslimCoords:FS.teslimCoords,
+    extraStops:FS.extraStops.slice(),
+    mesafe:FS.mesafe,
+    urun:urun,tonaj:document.getElementById("ff-tonaj").value||"-",
     durum:"hazırlanıyor",asama:-1,
     tarih:new Date().toLocaleDateString("tr-TR"),teslimTarih:null,
     yuklemeFotolar:[],teslimFotolar:[],teslimEvraklar:[]
   });
-  ["ff-firma","ff-alim","ff-teslimat","ff-urun","ff-tonaj"].forEach(function(id){document.getElementById(id).value="";});
-  document.getElementById("ff-sofor").value="";
+  resetSeferForm();
   toggleForm("sefer-form");saveDB();renderSeferler();
 }
 
 function setSeferAsama(seferId,idx){
-  var s=DB.seferler.find(function(x){return x.id===seferId;});
-  if(!s)return;
+  var s=DB.seferler.find(function(x){return x.id===seferId;});if(!s)return;
   s.asama=idx;s.durum=ASAMALAR[idx].toLowerCase();
   if(idx===ASAMALAR.length-1)s.teslimTarih=new Date().toLocaleDateString("tr-TR");
-  saveDB();
-  if(currentDriver)renderDriverAktif();
-  renderSeferler();
+  saveDB();if(currentDriver)renderDriverAktif();renderSeferler();
 }
 
 function delSefer(id){
@@ -452,7 +677,7 @@ function renderSeferler(){
     var sofor=DB.soforler.find(function(a){return a.id==s.sofor;});
     var open=openItems["s"+s.id];
     return'<div class="item" style="cursor:pointer" onclick="toggleItem(\'s'+s.id+'\')">'+
-    '<div class="item-kod">'+s.kod+'</div>'+
+    '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
     '<div class="item-header">'+
     '<div><div class="item-title">'+s.firma+'</div>'+
     '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · '+s.tarih+'<br>'+(sofor?'<b>'+sofor.ad+'</b>':'<span style="color:#c53030">⚠ Şoför atanmadı</span>')+'</div></div>'+
@@ -461,6 +686,7 @@ function renderSeferler(){
     '<div class="detail-grid">'+
     '<div class="detail-item"><div class="detail-label">ALIM</div><div class="detail-value">'+s.alim+'</div></div>'+
     '<div class="detail-item"><div class="detail-label">TESLİMAT</div><div class="detail-value">'+s.teslimat+'</div></div>'+
+    ((s.extraStops&&s.extraStops.length)?'<div class="detail-item" style="grid-column:1/-1"><div class="detail-label">EKSTRA DURAKLAR</div><div class="detail-value">'+s.extraStops.map(function(x){return x.adres;}).join(" → ")+'</div></div>':'')+
     '</div>'+
     '<div class="sofor-ata-row">'+
     '<span style="font-size:13px;color:#718096;white-space:nowrap">Şoför:</span>'+
@@ -473,16 +699,17 @@ function renderSeferler(){
     '<div class="code-box">'+s.kod+'</div>'+
     '<div class="detail-actions"><button class="btn btn-danger btn-sm" onclick="delSefer('+s.id+')">Sil</button></div>'+
     '</div></div>';
-  }).join(""):'<div class="empty">Aktif sefer yok<br><small>Aşağıdaki + butonuna bas</small></div>';
+  }).join(""):'<div class="empty">Aktif sefer yok<br><small>+ butonuna bas</small></div>';
 }
 
+/* ---- ŞOFÖR ---- */
 function addSofor(){
   var ad=document.getElementById("af-ad").value.trim();
   var plaka=document.getElementById("af-plaka").value.trim();
   var kadi=document.getElementById("af-kadi").value.trim();
   var sifre=document.getElementById("af-sifre").value;
   if(!ad||!plaka||!kadi||!sifre){alert("Tüm alanlar zorunlu.");return;}
-  if(sifre.length<4){alert("Şifre en az 4 karakter olmalı.");return;}
+  if(sifre.length<4){alert("Şifre en az 4 karakter.");return;}
   if(DB.soforler.find(function(s){return s.kadi&&s.kadi.toLowerCase()===kadi.toLowerCase();})){alert("Bu kullanıcı adı alınmış.");return;}
   DB.soforler.push({id:Date.now(),ad:ad,plaka:plaka,tip:document.getElementById("af-tip").value,tel:document.getElementById("af-tel").value.trim(),kadi:kadi,sifre:sifre,durum:"müsait"});
   ["af-ad","af-plaka","af-tel","af-kadi","af-sifre"].forEach(function(id){document.getElementById(id).value="";});
@@ -503,7 +730,7 @@ function renderSoforler(){
     return'<div class="item" style="cursor:pointer" onclick="toggleItem(\'a'+a.id+'\')">'+
     '<div class="item-header">'+
     '<div><div class="item-title">'+a.ad+'</div>'+
-    '<div class="item-sub">'+a.plaka+' · '+a.tip+(a.tel?' · '+a.tel:'')+'<br>Kullanıcı: <b>'+a.kadi+'</b> · '+aktif+' aktif / '+toplam+' toplam sefer</div></div>'+
+    '<div class="item-sub">'+a.plaka+' · '+a.tip+(a.tel?' · '+a.tel:'')+'<br>Kullanıcı: <b>'+a.kadi+'</b> · '+aktif+' aktif / '+toplam+' toplam</div></div>'+
     '<span class="badge badge-green">'+a.durum+'</span></div>'+
     '<div class="item-detail'+(open?" open":"")+'" onclick="event.stopPropagation()">'+
     '<div class="detail-actions"><button class="btn btn-danger btn-sm" onclick="delSofor('+a.id+')">Sil</button></div>'+
@@ -511,14 +738,42 @@ function renderSoforler(){
   }).join(""):'<div class="empty">Henüz şoför eklenmedi</div>';
 }
 
+/* ---- DOSYA RENDER HELPERS ---- */
+function renderFotoGrid(fotolar,clickable){
+  if(!fotolar||!fotolar.length)return"";
+  return'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">'+
+  fotolar.map(function(f){
+    return clickable
+      ?'<img src="'+f+'" onclick="openPhoto(\''+f+'\')" style="width:68px;height:68px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent" onmouseover="this.style.borderColor=\'#1a365d\'" onmouseout="this.style.borderColor=\'transparent\'">'
+      :'<div class="thumb"><img src="'+f+'" onclick="openPhoto(\''+f+'\')" style="cursor:pointer"></div>';
+  }).join("")+'</div>';
+}
+
+function renderDocList(evraklar,canDelete,seferId){
+  if(!evraklar||!evraklar.length)return"";
+  return evraklar.map(function(e,ei){
+    var isImg=e.data&&e.data.startsWith("data:image");
+    var isPdf=e.data&&e.data.startsWith("data:application/pdf");
+    var html='<div class="doc-card">'+
+    '<div class="doc-card-icon">'+(isImg?"🖼️":isPdf?"📄":"📎")+'</div>'+
+    '<div class="doc-card-name">'+e.ad+'</div>'+
+    '<div class="doc-card-actions">';
+    if(isImg)html+='<button class="doc-card-btn" onclick="openPhoto(\''+e.data+'\')">Gör</button>';
+    if(e.data)html+='<a class="doc-card-btn" href="'+e.data+'" download="'+e.ad+'">İndir</a>';
+    if(canDelete&&seferId!==undefined)html+='<button class="doc-card-btn" style="color:#c53030" onclick="delEvrak('+seferId+','+ei+')">Sil</button>';
+    html+='</div></div>';
+    return html;
+  }).join("");
+}
+
+/* ---- TESLİMLER (ADMİN) ---- */
 function renderTeslimler(){
   var ara=(document.getElementById("search-kod").value||"").trim().toUpperCase();
   var liste=DB.seferler.filter(function(s){return s.durum==="teslim edildi"&&(!ara||s.kod.toUpperCase().includes(ara));});
   document.getElementById("teslim-list").innerHTML=liste.length?liste.map(function(s){
     var sofor=DB.soforler.find(function(a){return a.id==s.sofor;});
-    var fotolar=(s.teslimFotolar||[]).concat(s.yuklemeFotolar||[]);
     return'<div class="item">'+
-    '<div class="item-kod">'+s.kod+'</div>'+
+    '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
     '<div class="item-header">'+
     '<div><div class="item-title">'+s.firma+'</div>'+
     '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · Teslim: '+(s.teslimTarih||s.tarih)+'</div></div>'+
@@ -526,15 +781,18 @@ function renderTeslimler(){
     '<div class="detail-grid" style="margin-top:10px">'+
     '<div class="detail-item"><div class="detail-label">ALIM</div><div class="detail-value">'+s.alim+'</div></div>'+
     '<div class="detail-item"><div class="detail-label">TESLİMAT</div><div class="detail-value">'+s.teslimat+'</div></div>'+
+    ((s.extraStops&&s.extraStops.length)?'<div class="detail-item" style="grid-column:1/-1"><div class="detail-label">DURAKLAR</div><div class="detail-value">'+s.extraStops.map(function(x){return x.adres;}).join(" → ")+'</div></div>':'')+
     '<div class="detail-item"><div class="detail-label">ŞOFÖR</div><div class="detail-value">'+(sofor?sofor.ad:"—")+'</div></div>'+
     '<div class="detail-item"><div class="detail-label">TARİH</div><div class="detail-value">'+s.tarih+'</div></div>'+
     '</div>'+
-    (fotolar.length?'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">'+fotolar.map(function(f){return'<img src="'+f+'" style="width:68px;height:68px;object-fit:cover;border-radius:8px">';}).join("")+'</div>':"")+
-    ((s.teslimEvraklar||[]).length?'<div style="margin-top:8px">'+s.teslimEvraklar.map(function(e){return'<div class="doc-item">📄 '+e.ad+'</div>';}).join("")+'</div>':"")+
+    ((s.yuklemeFotolar&&s.yuklemeFotolar.length)?'<div style="margin-top:8px"><div style="font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:4px">YÜKLEMEi FOTOĞRAFLARI</div>'+renderFotoGrid(s.yuklemeFotolar,true)+'</div>':'')+
+    ((s.teslimFotolar&&s.teslimFotolar.length)?'<div style="margin-top:8px"><div style="font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:4px">TESLİM FOTOĞRAFLARI</div>'+renderFotoGrid(s.teslimFotolar,true)+'</div>':'')+
+    ((s.teslimEvraklar&&s.teslimEvraklar.length)?'<div style="margin-top:8px"><div style="font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:4px">EVRAKLAR</div>'+renderDocList(s.teslimEvraklar,false)+'</div>':'')+
     '</div>';
   }).join(""):'<div class="empty">'+(ara?"Eşleşen sefer bulunamadı":"Henüz teslim yok")+'</div>';
 }
 
+/* ---- RAPOR ---- */
 function renderRapor(){
   var toplam=DB.seferler.length;
   var teslim=DB.seferler.filter(function(s){return s.durum==="teslim edildi";}).length;
@@ -549,7 +807,7 @@ function renderRapor(){
     return'<div class="rapor-card">'+
     '<div style="font-size:16px;font-weight:700">'+a.ad+' <span style="font-size:13px;color:#718096;font-weight:400">· '+a.plaka+'</span></div>'+
     '<div class="rapor-stats">'+
-    '<div class="rapor-stat"><div class="rnum">'+tum.length+'</div><div class="rlbl">Toplam Sefer</div></div>'+
+    '<div class="rapor-stat"><div class="rnum">'+tum.length+'</div><div class="rlbl">Toplam</div></div>'+
     '<div class="rapor-stat"><div class="rnum">'+tes.length+'</div><div class="rlbl">Teslim</div></div>'+
     '<div class="rapor-stat"><div class="rnum">'+(tum.length-tes.length)+'</div><div class="rlbl">Aktif</div></div>'+
     '</div>'+
@@ -558,12 +816,13 @@ function renderRapor(){
   }).join(""):'<div class="empty">Henüz şoför eklenmedi</div>';
 }
 
+/* ---- ŞOFÖR MOBİL ---- */
 function renderDriverAktif(){
   if(!currentDriver)return;
   var gorevler=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum!=="teslim edildi";});
-  var teslimSayac=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum==="teslim edildi";}).length;
+  var tes=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum==="teslim edildi";}).length;
   document.getElementById("drv-stat-aktif").textContent=gorevler.length;
-  document.getElementById("drv-stat-teslim").textContent=teslimSayac;
+  document.getElementById("drv-stat-teslim").textContent=tes;
   document.getElementById("driver-tasks").innerHTML=gorevler.length?gorevler.map(function(s){return buildSeferCard(s);}).join(""):'<div class="empty">Aktif seferiniz yok 🎉</div>';
 }
 
@@ -572,13 +831,14 @@ function renderDriverArsiv(){
   var arsiv=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum==="teslim edildi";});
   document.getElementById("driver-arsiv-list").innerHTML=arsiv.length?arsiv.map(function(s){
     return'<div class="arsiv-card">'+
-    '<div class="item-kod">'+s.kod+'</div>'+
+    '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
     '<div style="display:flex;justify-content:space-between;align-items:center">'+
     '<div><div style="font-size:15px;font-weight:700">'+s.firma+'</div>'+
     '<div style="font-size:12px;color:#718096;margin-top:3px">'+s.urun+' · '+s.tonaj+' ton</div>'+
     '<div style="font-size:12px;color:#718096">Teslim: '+(s.teslimTarih||s.tarih)+'</div></div>'+
     '<span class="badge badge-green">✓ Teslim</span></div>'+
     '<div style="margin-top:8px;font-size:13px;color:#718096">📍 '+s.alim+' → '+s.teslimat+'</div>'+
+    ((s.extraStops&&s.extraStops.length)?'<div style="font-size:12px;color:#a0aec0;margin-top:4px">Duraklar: '+s.extraStops.map(function(x){return x.adres;}).join(", ")+'</div>':'')+
     '</div>';
   }).join(""):'<div class="empty">Henüz teslim edilmiş seferiniz yok</div>';
 }
@@ -587,7 +847,7 @@ function buildSeferCard(s){
   var ai=s.asama;
   var html='<div class="sefer-card">'+
   '<div class="sefer-card-top">'+
-  '<div class="item-kod">'+s.kod+'</div>'+
+  '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
   '<div style="display:flex;justify-content:space-between;align-items:flex-start">'+
   '<div><div style="font-size:17px;font-weight:700;color:#1a202c">'+s.firma+'</div>'+
   '<div style="font-size:12px;color:#718096;margin-top:3px">'+s.tarih+' · '+s.urun+' · '+s.tonaj+' ton</div></div>'+
@@ -599,10 +859,13 @@ function buildSeferCard(s){
   '<div class="sefer-card-cell"><div class="scell-label">ÜRÜN</div><div class="scell-value">'+s.urun+'</div></div>'+
   '<div class="sefer-card-cell"><div class="scell-label">TONAJ</div><div class="scell-value">'+s.tonaj+' ton</div></div>'+
   '</div>'+
+  ((s.extraStops&&s.extraStops.length)?
+    '<div style="padding:10px 14px;background:#fffbeb;border-bottom:1px solid #f0f4f8;font-size:13px;color:#744210">'+
+    '🛑 Duraklar: '+s.extraStops.map(function(x){return x.adres;}).join(" → ")+
+    '</div>':'')+
   '<div class="asamalar">'+
   '<div class="asama-title">SEFER AŞAMALARI</div>'+
   '<div class="asama-steps">';
-
   ASAMALAR.forEach(function(a,i){
     var cls="asama-btn";
     if(i<ai)cls+=" done";
@@ -614,44 +877,40 @@ function buildSeferCard(s){
   });
   html+='</div>';
 
-  // Sadece Yükleme aşamasında (ai===0) fotoğraf alanı
+  // Yükleme aşamasında (ai===0)
   if(ai===0){
     html+='<div class="upload-area">'+
-    '<div class="upload-title">📷 Yükleme Fotoğrafları</div>'+
+    '<div class="upload-title">📷 Yükleme Fotoğrafları ve Belgeler</div>'+
     '<div class="upload-btns">'+
     '<label class="upload-btn">📷 Kamera<input type="file" accept="image/*" capture="environment" style="display:none" onchange="uploadFoto(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
     '<label class="upload-btn">🖼 Albüm<input type="file" accept="image/*" multiple style="display:none" onchange="uploadFotoMulti(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
-    '<label class="upload-btn">📄 Dosya<input type="file" accept="application/pdf,image/*" style="display:none" onchange="uploadEvrakAlan(event,'+s.id+',\'yuklemeFotolar\')"></label>'+
-    '</div><div class="thumb-row">';
-    (s.yuklemeFotolar||[]).forEach(function(f,fi){
-      html+='<div class="thumb"><img src="'+f+'"><button class="thumb-del" onclick="delFoto('+s.id+',\'yuklemeFotolar\','+fi+')">✕</button></div>';
-    });
-    html+='</div></div>';
+    '<label class="upload-btn">📄 Dosya<input type="file" accept="image/*,application/pdf,.pdf,.doc,.docx" style="display:none" onchange="uploadEvrak(event,'+s.id+')"></label>'+
+    '</div>'+
+    renderFotoGrid(s.yuklemeFotolar,false)+
+    renderDocList(s.teslimEvraklar,true,s.id)+
+    '</div>';
   }
 
-  // Sadece Teslim Edildi aşamasında (ai===4) evrak ve fotoğraf alanı
+  // Teslim Edildi aşamasında (ai===4)
   if(ai===ASAMALAR.length-1){
     html+='<div class="upload-area" style="margin-top:10px">'+
-    '<div class="upload-title">✅ Teslim Belgesi ve Fotoğraf</div>'+
+    '<div class="upload-title">✅ Teslim Fotoğrafları ve Belgeler</div>'+
     '<div class="upload-btns">'+
     '<label class="upload-btn">📷 Kamera<input type="file" accept="image/*" capture="environment" style="display:none" onchange="uploadFoto(event,'+s.id+',\'teslimFotolar\')"></label>'+
     '<label class="upload-btn">🖼 Albüm<input type="file" accept="image/*" multiple style="display:none" onchange="uploadFotoMulti(event,'+s.id+',\'teslimFotolar\')"></label>'+
-    '<label class="upload-btn">📄 Evrak<input type="file" accept="image/*,application/pdf" style="display:none" onchange="uploadEvrak(event,'+s.id+')"></label>'+
-    '</div><div class="thumb-row">';
-    (s.teslimFotolar||[]).forEach(function(f,fi){
-      html+='<div class="thumb"><img src="'+f+'"><button class="thumb-del" onclick="delFoto('+s.id+',\'teslimFotolar\','+fi+')">✕</button></div>';
-    });
-    html+='</div>';
-    (s.teslimEvraklar||[]).forEach(function(e,ei){
-      html+='<div class="doc-item">📄 '+e.ad+'<button onclick="delEvrak('+s.id+','+ei+')" style="margin-left:auto;background:none;border:none;color:#c53030;cursor:pointer">Sil</button></div>';
-    });
-    html+='<div class="code-box">'+s.kod+'</div></div>';
+    '<label class="upload-btn">📄 Evrak<input type="file" accept="image/*,application/pdf,.pdf" style="display:none" onchange="uploadEvrak(event,'+s.id+')"></label>'+
+    '</div>'+
+    renderFotoGrid(s.teslimFotolar,false)+
+    renderDocList(s.teslimEvraklar,true,s.id)+
+    '<div class="code-box">'+s.kod+'</div>'+
+    '</div>';
   }
 
   html+='</div></div>';
   return html;
 }
 
+/* ---- UPLOAD ---- */
 function uploadFoto(e,id,alan){
   var f=e.target.files[0];if(!f)return;
   resizeImg(f,function(d){
@@ -667,7 +926,10 @@ function uploadFotoMulti(e,id,alan){
   if(!s)return;if(!s[alan])s[alan]=[];
   var done=0;
   files.forEach(function(f){
-    resizeImg(f,function(d){s[alan].push(d);done++;if(done===files.length){saveDB();renderDriverAktif();}});
+    resizeImg(f,function(d){
+      s[alan].push(d);done++;
+      if(done===files.length){saveDB();renderDriverAktif();}
+    });
   });
 }
 
@@ -675,19 +937,10 @@ function uploadEvrak(e,id){
   var f=e.target.files[0];if(!f)return;
   var s=DB.seferler.find(function(x){return x.id===id;});
   if(!s)return;if(!s.teslimEvraklar)s.teslimEvraklar=[];
-  s.teslimEvraklar.push({ad:f.name});saveDB();renderDriverAktif();
-}
-
-function uploadEvrakAlan(e,id,alan){
-  var f=e.target.files[0];if(!f)return;
-  var s=DB.seferler.find(function(x){return x.id===id;});
-  if(!s)return;if(!s[alan])s[alan]=[];
-  if(f.type.startsWith("image/")){
-    resizeImg(f,function(d){s[alan].push(d);saveDB();renderDriverAktif();});
-  }else{
-    if(!s.teslimEvraklar)s.teslimEvraklar=[];
-    s.teslimEvraklar.push({ad:f.name});saveDB();renderDriverAktif();
-  }
+  readFileAsBase64(f,function(data){
+    s.teslimEvraklar.push({ad:f.name,type:f.type,data:data});
+    saveDB();renderDriverAktif();
+  });
 }
 
 function delFoto(id,alan,idx){
