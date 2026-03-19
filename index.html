@@ -232,8 +232,11 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
           <div><label class="form-label">TONAJ (ton)</label><input class="form-input" type="number" id="ff-tonaj" placeholder="15"></div>
         </div>
         <label class="form-label">DIŞ REFERANS KODU (opsiyonel)</label>
-        <input class="form-input" id="ff-refkod" placeholder="örn. SIP-2025-0042" style="margin-bottom:4px">
-        <div style="font-size:11px;color:#a0aec0;margin-bottom:8px">Başka sistemden aldığınız sipariş/sefer kodu</div>
+        <input class="form-input" id="ff-refkod" placeholder="örn. SIP-2025-0042" style="margin-bottom:8px">
+        <div class="form-grid">
+          <div><label class="form-label">FİRMA YETKİLİSİ (opsiyonel)</label><input class="form-input" id="ff-yetkili" placeholder="örn. Ahmet Yılmaz"></div>
+          <div><label class="form-label">YETKİLİ TELEFONU (opsiyonel)</label><input class="form-input" id="ff-yetkili-tel" placeholder="05XX XXX XX XX"></div>
+        </div>
         <label class="form-label">ALIM ADRESİ</label>
         <div class="addr-wrap">
           <input class="form-input" id="ff-alim" placeholder="Adres yaz, listeden seç..." autocomplete="off" oninput="onAlimInput(this.value)">
@@ -415,6 +418,7 @@ async function restoreSession(){
     if(sess.role==="admin"){
       hide("loginScreen");show("adminScreen");
       document.getElementById("admin-fab").style.display="block";
+  updateFabText();
       renderAll();return true;
     }
     if(sess.role==="sofor"&&sess.driverId){
@@ -570,7 +574,7 @@ function resetSeferForm(){
   FS={alimCoords:null,teslimCoords:null,extraStops:[],mesafe:null};
   renderExtraStops();
   document.getElementById("distance-display").style.display="none";
-  ["ff-firma","ff-alim","ff-teslimat","ff-urun","ff-tonaj","ff-refkod"].forEach(function(id){var el=document.getElementById(id);if(el)el.value="";});
+  ["ff-firma","ff-alim","ff-teslimat","ff-urun","ff-tonaj","ff-refkod","ff-yetkili","ff-yetkili-tel"].forEach(function(id){var el=document.getElementById(id);if(el)el.value="";});
   document.getElementById("ff-sofor").value="";
 }
 
@@ -593,6 +597,7 @@ async function doAdminLogin(){
     saveSession("admin",null);
     hide("loginScreen");show("adminScreen");
     document.getElementById("admin-fab").style.display="block";
+  updateFabText();
     renderAll();
   }else showError("Kullanıcı adı veya şifre hatalı.");
 }
@@ -629,6 +634,13 @@ function showDriverTab(tab){
   if(tab==="aktif")renderDriverAktif();else renderDriverArsiv();
 }
 
+function updateFabText(){
+  var fab=document.getElementById("admin-fab");
+  if(!fab)return;
+  var texts={seferler:"+ Yeni Sefer Oluştur",soforler:"+ Yeni Şoför Ekle",teslimler:"",rapor:""};
+  fab.textContent=texts[activeTab]||"+ Yeni Ekle";
+}
+
 function showTab(tab){
   activeTab=tab;
   var tabs=["seferler","soforler","teslimler","rapor"];
@@ -638,6 +650,7 @@ function showTab(tab){
   if(tab==="teslimler")renderTeslimler();
   var fabEl=document.getElementById("admin-fab");
   if(fabEl)fabEl.style.display=(tab==="rapor"||tab==="teslimler")?"none":"block";
+  updateFabText();
 }
 
 function adminFab(){
@@ -672,6 +685,8 @@ async function addSefer(){
     mesafe:FS.mesafe?String(FS.mesafe):null,
     urun:urun,tonaj:document.getElementById("ff-tonaj").value||"-",
     ref_kod:document.getElementById("ff-refkod").value.trim()||null,
+    yetkili:document.getElementById("ff-yetkili").value.trim()||null,
+    yetkili_tel:document.getElementById("ff-yetkili-tel").value.trim()||null,
     durum:"hazırlanıyor",asama:-1,
     tarih:new Date().toLocaleDateString("tr-TR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"}),teslim_tarih:null,
     yukleme_fotolar:"[]",teslim_fotolar:"[]",teslim_evraklar:"[]"
@@ -685,7 +700,7 @@ async function addSefer(){
 async function setSeferAsama(seferId,idx){
   var s=DB.seferler.find(function(x){return x.id===seferId;});if(!s)return;
   var upd={asama:idx,durum:ASAMALAR[idx].toLowerCase()};
-  if(idx===ASAMALAR.length-1)upd.teslim_tarih=new Date().toLocaleDateString("tr-TR");
+  if(idx===ASAMALAR.length-1)upd.teslim_tarih=new Date().toLocaleDateString("tr-TR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});
   var ok=await sbPatch("seferler",seferId,upd);
   if(ok){Object.assign(s,upd);showSaved();}
   if(currentDriver)renderDriverAktif();renderSeferler();
@@ -754,16 +769,16 @@ async function delSofor(id){
 
 function renderSoforler(){
   document.getElementById("sofor-list").innerHTML=DB.soforler.length?DB.soforler.map(function(a){
-    var open=openItems["a"+a.id];
     var aktif=DB.seferler.filter(function(s){return s.sofor==a.id&&s.durum!=="teslim edildi";}).length;
     var toplam=DB.seferler.filter(function(s){return s.sofor==a.id;}).length;
-    return'<div class="item" style="cursor:pointer" onclick="toggleItem(\'a'+a.id+'\')">'+
-    '<div class="item-header"><div><div class="item-title">'+a.ad+'</div>'+
+    return'<div class="item">'+
+    '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">'+
+    '<div><div class="item-title">'+a.ad+'</div>'+
     '<div class="item-sub">'+a.plaka+' · '+a.tip+(a.tel?' · '+a.tel:'')+'<br>Kullanıcı: <b>'+a.kadi+'</b> · '+aktif+' aktif / '+toplam+' toplam</div></div>'+
-    '<span class="badge badge-green">'+a.durum+'</span></div>'+
-    '<div class="item-detail'+(open?" open":"")+'" onclick="event.stopPropagation()">'+
-    '<div class="detail-actions"><button class="btn btn-danger btn-sm" onclick="delSofor('+a.id+')">Sil</button></div>'+
-    '</div></div>';
+    '<div style="display:flex;align-items:center;gap:8px;flex-shrink:0">'+
+    '<span class="badge badge-green">'+a.durum+'</span>'+
+    '<button class="btn btn-danger btn-sm" onclick="delSofor('+a.id+')">Sil</button>'+
+    '</div></div></div>';
   }).join(""):'<div class="empty">Henüz şoför eklenmedi</div>';
 }
 
@@ -804,21 +819,37 @@ function renderTeslimler(){
     return'<div class="item">'+
     '<div class="item-kod">'+s.kod+(s.ref_kod?' <span style="color:#553c9a;background:#e9d8fd;padding:2px 6px;border-radius:4px;font-size:10px">'+s.ref_kod+'</span>':'')+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
     '<div class="item-header"><div><div class="item-title">'+s.firma+'</div>'+
-    '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · Teslim: '+(s.teslim_tarih||s.tarih)+'</div></div>'+
+    '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton</div></div>'+
     '<span class="badge badge-green">Teslim</span></div>'+
     '<div class="detail-grid" style="margin-top:10px">'+
-    '<div class="detail-item"><div class="detail-label">ALIM</div><div class="detail-value">'+s.alim+'</div></div>'+
-    '<div class="detail-item"><div class="detail-label">TESLİMAT</div><div class="detail-value">'+s.teslimat+'</div></div>'+
+    '<div class="detail-item"><div class="detail-label">ALIM ADRESİ</div><div class="detail-value">'+s.alim+'</div></div>'+
+    '<div class="detail-item"><div class="detail-label">TESLİMAT ADRESİ</div><div class="detail-value">'+s.teslimat+'</div></div>'+
     ((s.extra_stops&&s.extra_stops.length)?'<div class="detail-item" style="grid-column:1/-1"><div class="detail-label">DURAKLAR</div><div class="detail-value">'+s.extra_stops.map(function(x){return x.adres;}).join(" → ")+'</div></div>':'')+
     '<div class="detail-item"><div class="detail-label">ŞOFÖR</div><div class="detail-value">'+(sofor?sofor.ad:"—")+'</div></div>'+
-    '<div class="detail-item"><div class="detail-label">TARİH</div><div class="detail-value">'+s.tarih+'</div></div>'+
+    '<div class="detail-item"><div class="detail-label">📦 YÜKLEME TARİHİ</div><div class="detail-value">'+s.tarih+'</div></div>'+
+    '<div class="detail-item"><div class="detail-label">✅ TESLİM TARİHİ</div><div class="detail-value">'+(s.teslim_tarih||"—")+'</div></div>'+
+    ((s.yetkili)?'<div class="detail-item"><div class="detail-label">YETKİLİ</div><div class="detail-value">'+s.yetkili+(s.yetkili_tel?' · '+s.yetkili_tel:'')+'</div></div>':'.')+
     '</div>'+
     ((s.yukleme_fotolar&&s.yukleme_fotolar.length)?'<div style="margin-top:8px"><div style="font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:4px">YÜKLEME FOTOĞRAFLARI</div>'+renderFotoGrid(s.yukleme_fotolar,true)+'</div>':'')+
     ((s.teslim_fotolar&&s.teslim_fotolar.length)?'<div style="margin-top:8px"><div style="font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:4px">TESLİM FOTOĞRAFLARI</div>'+renderFotoGrid(s.teslim_fotolar,true)+'</div>':'')+
     ((s.teslim_evraklar&&s.teslim_evraklar.length)?'<div style="margin-top:8px"><div style="font-size:11px;color:#a0aec0;letter-spacing:1px;margin-bottom:4px">EVRAKLAR</div>'+renderDocList(s.teslim_evraklar,false)+'</div>':'')+
+    '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">'+
+    '<button class="btn btn-gray btn-sm" onclick="seferGeriAl('+s.id+')">↩ Aktife Al</button>'+
+    '<button class="btn btn-danger btn-sm" onclick="delSefer('+s.id+')">Sil</button>'+
+    '</div>'+
     '</div>';
   }).join(""):'<div class="empty">'+(ara?"Eşleşen sefer bulunamadı":"Henüz teslim yok")+'</div>';
 }
+
+async function seferGeriAl(id){
+  if(!confirm("Bu sefer aktife alınsın mı?"))return;
+  var upd={durum:"hazırlanıyor",asama:-1,teslim_tarih:null};
+  await sbPatch("seferler",id,upd);
+  var s=DB.seferler.find(function(x){return x.id===id;});
+  if(s)Object.assign(s,upd);
+  showSaved();renderTeslimler();renderSeferler();
+}
+
 
 /* ---- RAPOR ---- */
 function renderRapor(){
@@ -880,6 +911,7 @@ function buildSeferCard(s){
   '<div class="sefer-card-cell"><div class="scell-label">TESLİMAT</div><div class="scell-value">'+s.teslimat+'</div></div>'+
   '<div class="sefer-card-cell"><div class="scell-label">ÜRÜN</div><div class="scell-value">'+s.urun+'</div></div>'+
   '<div class="sefer-card-cell"><div class="scell-label">TONAJ</div><div class="scell-value">'+s.tonaj+' ton</div></div>'+
+  ((s.yetkili)?'<div class="sefer-card-cell" style="grid-column:1/-1"><div class="scell-label">FİRMA YETKİLİSİ</div><div class="scell-value">'+s.yetkili+(s.yetkili_tel?' · <a href="tel:'+s.yetkili_tel+'" style="color:#1a365d">'+s.yetkili_tel+'</a>':'')+'</div></div>':'')+
   '</div>'+
   ((s.extra_stops&&s.extra_stops.length)?'<div style="padding:10px 14px;background:#fffbeb;border-bottom:1px solid #f0f4f8;font-size:13px;color:#744210">🛑 Duraklar: '+s.extra_stops.map(function(x){return x.adres;}).join(" → ")+'</div>':'')+
   '<div class="asamalar"><div class="asama-title">SEFER AŞAMALARI</div><div class="asama-steps">';
