@@ -233,9 +233,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
         </div>
         <label class="form-label">DIŞ REFERANS KODU (opsiyonel)</label>
         <input class="form-input" id="ff-refkod" placeholder="örn. SIP-2025-0042" style="margin-bottom:4px">
-        <div style="font-size:11px;color:#a0aec0;margin-bottom:4px">Başka sistemden aldığınız sipariş/sefer kodu</div>
-
-        </div>
+        <div style="font-size:11px;color:#a0aec0;margin-bottom:8px">Başka sistemden aldığınız sipariş/sefer kodu</div>
         <label class="form-label">ALIM ADRESİ</label>
         <div class="addr-wrap">
           <input class="form-input" id="ff-alim" placeholder="Adres yaz, listeden seç..." autocomplete="off" oninput="onAlimInput(this.value)">
@@ -299,7 +297,7 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
       <div id="rapor-list"></div>
     </div>
   </div>
-  <button class="fab" id="admin-fab" onclick="adminFab()">+ Yeni Ekle</button>
+  <button class="fab" id="admin-fab" onclick="adminFab()" style="display:none">+ Yeni Sefer Oluştur</button>
 </div>
 
 <!-- ŞOFÖR -->
@@ -415,7 +413,9 @@ async function restoreSession(){
     if(Date.now()-sess.ts>24*60*60*1000){clearSession();return false;}
     await loadAll();
     if(sess.role==="admin"){
-      hide("loginScreen");show("adminScreen");renderAll();return true;
+      hide("loginScreen");show("adminScreen");
+      document.getElementById("admin-fab").style.display="block";
+      renderAll();return true;
     }
     if(sess.role==="sofor"&&sess.driverId){
       var s=DB.soforler.find(function(x){return x.id==sess.driverId;});
@@ -591,7 +591,9 @@ async function doAdminLogin(){
   if(u===ADMIN.user&&p===ADMIN.pass){
     await loadAll();
     saveSession("admin",null);
-    hide("loginScreen");show("adminScreen");renderAll();
+    hide("loginScreen");show("adminScreen");
+    document.getElementById("admin-fab").style.display="block";
+    renderAll();
   }else showError("Kullanıcı adı veya şifre hatalı.");
 }
 
@@ -634,7 +636,8 @@ function showTab(tab){
   tabs.forEach(function(t){document.getElementById("tab-"+t).classList.toggle("hidden",t!==tab);});
   if(tab==="rapor")renderRapor();
   if(tab==="teslimler")renderTeslimler();
-  document.getElementById("admin-fab").style.display=(tab==="rapor"||tab==="teslimler")?"none":"block";
+  var fabEl=document.getElementById("admin-fab");
+  if(fabEl)fabEl.style.display=(tab==="rapor"||tab==="teslimler")?"none":"block";
 }
 
 function adminFab(){
@@ -670,7 +673,7 @@ async function addSefer(){
     urun:urun,tonaj:document.getElementById("ff-tonaj").value||"-",
     ref_kod:document.getElementById("ff-refkod").value.trim()||null,
     durum:"hazırlanıyor",asama:-1,
-    tarih:new Date().toLocaleDateString("tr-TR"),teslim_tarih:null,
+    tarih:new Date().toLocaleDateString("tr-TR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"}),teslim_tarih:null,
     yukleme_fotolar:"[]",teslim_fotolar:"[]",teslim_evraklar:"[]"
   };
   var res=await sbPost("seferler",data);
