@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="manifest" href="/manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Barsel">
 <meta name="theme-color" content="#1a365d">
 <link rel="apple-touch-icon" href="https://api.barseltransport.com/media/barsel-logo-white.png">
-<title>Barsel Lojistik Takip</title>
+<title>Barsel Takip</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-bottom:80px}
@@ -229,6 +230,11 @@ body{background:#f0f4f8;font-family:Arial,sans-serif;color:#1a202c;padding-botto
         <div class="form-grid">
           <div><label class="form-label">TAŞINAN ÜRÜN</label><input class="form-input" id="ff-urun" placeholder="örn. Tekstil Mamulü"></div>
           <div><label class="form-label">TONAJ (ton)</label><input class="form-input" type="number" id="ff-tonaj" placeholder="15"></div>
+        </div>
+        <label class="form-label">DIŞ REFERANS KODU (opsiyonel)</label>
+        <input class="form-input" id="ff-refkod" placeholder="örn. SIP-2025-0042" style="margin-bottom:4px">
+        <div style="font-size:11px;color:#a0aec0;margin-bottom:4px">Başka sistemden aldığınız sipariş/sefer kodu</div>
+
         </div>
         <label class="form-label">ALIM ADRESİ</label>
         <div class="addr-wrap">
@@ -564,7 +570,7 @@ function resetSeferForm(){
   FS={alimCoords:null,teslimCoords:null,extraStops:[],mesafe:null};
   renderExtraStops();
   document.getElementById("distance-display").style.display="none";
-  ["ff-firma","ff-alim","ff-teslimat","ff-urun","ff-tonaj"].forEach(function(id){var el=document.getElementById(id);if(el)el.value="";});
+  ["ff-firma","ff-alim","ff-teslimat","ff-urun","ff-tonaj","ff-refkod"].forEach(function(id){var el=document.getElementById(id);if(el)el.value="";});
   document.getElementById("ff-sofor").value="";
 }
 
@@ -662,6 +668,7 @@ async function addSefer(){
     extra_stops:JSON.stringify(FS.extraStops),
     mesafe:FS.mesafe?String(FS.mesafe):null,
     urun:urun,tonaj:document.getElementById("ff-tonaj").value||"-",
+    ref_kod:document.getElementById("ff-refkod").value.trim()||null,
     durum:"hazırlanıyor",asama:-1,
     tarih:new Date().toLocaleDateString("tr-TR"),teslim_tarih:null,
     yukleme_fotolar:"[]",teslim_fotolar:"[]",teslim_evraklar:"[]"
@@ -700,7 +707,7 @@ function renderSeferler(){
     var sofor=DB.soforler.find(function(a){return a.id==s.sofor;});
     var open=openItems["s"+s.id];
     return'<div class="item" style="cursor:pointer" onclick="toggleItem(\'s'+s.id+'\')">'+
-    '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
+    '<div class="item-kod">'+s.kod+(s.ref_kod?' <span style="color:#553c9a;background:#e9d8fd;padding:2px 6px;border-radius:4px;font-size:10px">'+s.ref_kod+'</span>':'')+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
     '<div class="item-header"><div><div class="item-title">'+s.firma+'</div>'+
     '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · '+s.tarih+'<br>'+(sofor?'<b>'+sofor.ad+'</b>':'<span style="color:#c53030">⚠ Şoför atanmadı</span>')+'</div></div>'+
     '<span class="badge '+badgeCls(s.durum)+'">'+s.durum+'</span></div>'+
@@ -792,7 +799,7 @@ function renderTeslimler(){
   document.getElementById("teslim-list").innerHTML=liste.length?liste.map(function(s){
     var sofor=DB.soforler.find(function(a){return a.id==s.sofor;});
     return'<div class="item">'+
-    '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
+    '<div class="item-kod">'+s.kod+(s.ref_kod?' <span style="color:#553c9a;background:#e9d8fd;padding:2px 6px;border-radius:4px;font-size:10px">'+s.ref_kod+'</span>':'')+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
     '<div class="item-header"><div><div class="item-title">'+s.firma+'</div>'+
     '<div class="item-sub">'+s.urun+' · '+s.tonaj+' ton · Teslim: '+(s.teslim_tarih||s.tarih)+'</div></div>'+
     '<span class="badge badge-green">Teslim</span></div>'+
@@ -846,7 +853,7 @@ function renderDriverArsiv(){
   var arsiv=DB.seferler.filter(function(s){return s.sofor==currentDriver.id&&s.durum==="teslim edildi";});
   document.getElementById("driver-arsiv-list").innerHTML=arsiv.length?arsiv.map(function(s){
     return'<div class="arsiv-card">'+
-    '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
+    '<div class="item-kod">'+s.kod+(s.ref_kod?' <span style="color:#553c9a;background:#e9d8fd;padding:2px 6px;border-radius:4px;font-size:10px">'+s.ref_kod+'</span>':'')+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
     '<div style="display:flex;justify-content:space-between;align-items:center">'+
     '<div><div style="font-size:15px;font-weight:700">'+s.firma+'</div>'+
     '<div style="font-size:12px;color:#718096;margin-top:3px">'+s.urun+' · '+s.tonaj+' ton · Teslim: '+(s.teslim_tarih||s.tarih)+'</div></div>'+
@@ -860,7 +867,7 @@ function buildSeferCard(s){
   var ai=s.asama;
   var html='<div class="sefer-card">'+
   '<div class="sefer-card-top">'+
-  '<div class="item-kod">'+s.kod+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
+  '<div class="item-kod">'+s.kod+(s.ref_kod?' <span style="color:#553c9a;background:#e9d8fd;padding:2px 6px;border-radius:4px;font-size:10px">'+s.ref_kod+'</span>':'')+(s.mesafe?' · 📏 '+s.mesafe+' km':'')+'</div>'+
   '<div style="display:flex;justify-content:space-between;align-items:flex-start">'+
   '<div><div style="font-size:17px;font-weight:700;color:#1a202c">'+s.firma+'</div>'+
   '<div style="font-size:12px;color:#718096;margin-top:3px">'+s.tarih+' · '+s.urun+' · '+s.tonaj+' ton</div></div>'+
